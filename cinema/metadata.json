@@ -1,0 +1,82 @@
+{
+    "articles": [
+        {
+            "id": "1",
+            "title": "Aftersun",
+            "slug": "aftersun",
+            "description": "Short description of the article",
+            "date": "2024-01-15",
+            "author": "Ugur Kostak",
+            "category": "category-name",
+            "tags": ["tag1", "tag2"],
+            "image": "./assets/images/article-image.jpg",
+            "content": "Path or identifier for article content",
+            "featured": false
+        },
+        {
+            "id": "2",
+            "title": "Banshees of Inisherin",
+            "slug": "banshees-of-inisherin",
+            "description": "Short description of another article",
+            "date": "2024-02-20",
+            "author": "Ugur Kostak",
+            "category": "another-category",
+            "tags": ["tag3", "tag4"],
+            "image": "./assets/images/another-article-image.jpg",
+            "content": "Path or identifier for another article content",
+            "featured": true
+        },
+        {
+            "id": "3",
+            "title": "Three Colors Trilogy",
+            "slug": "three-colors-trilogy",
+            "description": "Short description of the third article",
+            "date": "2024-03-10",
+            "author": "Ugur Kostak",
+            "category": "third-category",
+            "tags": ["tag5", "tag6"],
+            "image": "./assets/images/third-article-image.jpg",
+            "content": "Path or identifier for third article content",
+            "featured": false
+        },
+        {
+            "id": "4",
+            "title": "Tar",
+            "slug": "tar",
+            "description": "Short description of the fourth article",
+            "date": "2024-04-05",
+            "author": "Ugur Kostak",
+            "category": "fourth-category",
+            "tags": ["tag7", "tag8"],
+            "image": "./assets/images/fourth-article-image.jpg",
+            "content": "Path or identifier for fourth article content",
+            "featured": true
+        },
+        {
+            "id": "5",
+            "title": "Birdman",
+            "slug": "birdman",
+            "description": "Short description of the fifth article",
+            "date": "2024-05-01",
+            "author": "Ugur Kostak",
+            "category": "fifth-category",
+            "tags": ["tag9", "tag10"],
+            "image": "./assets/images/fifth-article-image.jpg",
+            "content": "Path or identifier for fifth article content",
+            "featured": false
+        },
+        {
+            "id": "6",
+            "title": "Everything Everywhere All at Once",
+            "slug": "everything-everywhere-all-at-once",
+            "description": "Short description of the sixth article",
+            "date": "2024-06-01",
+            "author": "Ugur Kostak",
+            "category": "sixth-category",
+            "tags": ["tag11", "tag12"],
+            "image": "./assets/images/sixth-article-image.jpg",
+            "content": "Path or identifier for sixth article content",
+            "featured": true
+        }
+    ]
+}
