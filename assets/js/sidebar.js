@@ -1,4 +1,5 @@
 (function () {
+  // Navigation items configuration
   var navItems = [
     { href: 'index.html', title: 'Home', label: 'Home' },
     { href: 'about.html', title: 'About', label: 'About' },
@@ -9,28 +10,44 @@
     { href: 'contact.html', title: 'Contact', label: 'Contact' }
   ];
 
+  // Site branding and metadata
   var siteConfig = {
     brandText: 'About Photography and Cinema',
     tagline: 'Here I will be writing mostly about my photographs and cinema I have seen.',
     logoSrc: './assets/movies/mashup-logo.svg',
+    copyright: '© Ugur Kostak | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>',
     social: [
-      { icon: 'fa-instagram', href: 'https://www.instagram.com/pian_pianino', title: '' },
-      { icon: 'fa-dribbble', href: 'https://dribbble.com/', title: '' },
-      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: '' }
+      { icon: 'fa-instagram', href: 'https://www.instagram.com/pian_pianino', title: 'Instagram' },
+      { icon: 'fa-dribbble', href: 'https://dribbble.com/', title: 'Dribbble' },
+      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: 'Twitter' }
     ]
   };
 
+  /**
+   * Calculates the relative path prefix for the current page
+   * @returns {string} prefix - either './' for root pages or '../' repeated for nested pages
+   */
   function getPrefix() {
     var segments = window.location.pathname.split('/');
     var depth = segments.length - 2;
     return depth > 0 ? '../'.repeat(depth) : './';
   }
 
+  /**
+   * Gets the current page filename
+   * @returns {string} filename of current page
+   */
   function getCurrentPage() {
     var current = window.location.pathname.split('/').pop();
     return current === '' ? 'index.html' : current;
   }
 
+  /**
+   * Determines if a nav item should be marked as active
+   * @param {Object} item - nav item configuration
+   * @param {string} currentPage - current page filename
+   * @returns {boolean} whether item should be marked active
+   */
   function isActiveItem(item, currentPage) {
     if (item.href === currentPage) {
       return true;
@@ -47,6 +64,9 @@
     return false;
   }
 
+  /**
+   * Renders the sidebar navigation with branding, nav items, and social links
+   */
   function renderSidebar() {
     var navCollapseRoot = document.getElementById('navbar-collapse');
     if (!navCollapseRoot) return;
@@ -68,7 +88,7 @@
     
     var logoImg = document.createElement('img');
     logoImg.className = 'img-responsive site-logo';
-    logoImg.alt = '';
+    logoImg.alt = 'Site Logo';
     logoImg.src = prefix + siteConfig.logoSrc;
     
     brandLink.appendChild(logoImg);
@@ -128,12 +148,13 @@
     navFooter.appendChild(socialPara);
 
     var copyrightPara = document.createElement('p');
-    copyrightPara.innerHTML = '© Ugur Kostak | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>';
+    copyrightPara.innerHTML = siteConfig.copyright;
     navFooter.appendChild(copyrightPara);
 
     navCollapseRoot.appendChild(navFooter);
   }
 
+  // Initialize sidebar on DOM ready or immediately if already loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderSidebar);
   } else {
