@@ -5,8 +5,7 @@
     { href: 'about.html', title: 'About', label: 'About' },
     { href: 'cinema.html', title: 'Cinema', label: 'Cinema' },
     { href: 'photography.html', title: 'Photography', label: 'Photography' },
-    { href: 'tech-writings.html', title: 'Tech Writings', label: 'Tech Writings' },
-    { href: 'components.html', title: 'Components', label: 'Components' }
+    { href: 'tech-blog.html', title: 'Tech Blog', label: 'Tech Blog' }
   ];
 
   // Site branding and metadata
@@ -56,7 +55,7 @@
       return true;
     }
 
-    if (item.href === 'tech-writings.html' && window.location.pathname.indexOf('/tech-writings/') !== -1) {
+    if (item.href === 'tech-blog.html' && window.location.pathname.indexOf('/tech-blog/') !== -1) {
       return true;
     }
 

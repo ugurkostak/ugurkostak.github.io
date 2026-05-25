@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
+  <meta content="Photography - Visual stories and landscapes" name="description">
   <meta name="google" content="notranslate" />
   <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
@@ -15,12 +15,10 @@
   <link href="./assets/apple-icon-180x180.png" rel="apple-touch-icon">
   <link href="./assets/favicon.ico" rel="icon">
 
-
-
   <title>Photography</title>  
 
 <link href="./assets/css/main.82cfd66e.css" rel="stylesheet">
-<link href="./assets/css/separator.css" rel="stylesheet"></head>
+<link href="./assets/css/blog.css" rel="stylesheet"></head>
 
 <body>
 
@@ -41,78 +39,33 @@
 </header>
 <main class="" id="main-collapse">
 
-<!-- Add your site or app content here -->
-<div class="timeline-section">
+<div class="blog-scrollbar-container">
+  <div class="blog-scrollbar-date" id="blogScrollbarDate">Mar 2026</div>
+  <div class="blog-scrollbar-track">
+    <div class="blog-scrollbar-progress"></div>
+  </div>
+</div>
+
+<div class="blog-right-timeline">
   <div class="timeline-separator">
     <div class="timeline-date">
-      <span class="timeline-month">March</span>
-      <span class="timeline-year">2026</span>
+      <span class="timeline-month" id="blogTimelineMonth">Mar</span>
+      <span class="timeline-year" id="blogTimelineYear">2026</span>
     </div>
   </div>
-
-  <div class="hero-full-wrapper">
-    <div class="grid">
-    <div class="gutter-sizer"></div>
-      <div class="grid-sizer"></div>
-    
-    <div class="grid-item timeline-item" data-year="2026" data-month="March" data-published="March 2026">
-      <img class="img-responsive" alt="Landscape Photography" src="./assets/images/photos/small/DSC_0929.PNG">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Stuttgart</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item timeline-item" data-year="2026" data-month="February" data-published="February 2026">
-      <img class="img-responsive" alt="Nature Photography" src="./assets/images/photos/small/DSC_0994.PNG">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Strassbourg</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item timeline-item" data-year="2026" data-month="January" data-published="January 2026">
-      <img class="img-responsive" alt="Landscape Photography" src="./assets/images/photos/small/DSC_0929.PNG">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Athens</h3>
-            <p>https://www.behance.net/</p>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div class="grid-item timeline-item" data-year="2025" data-month="December" data-published="December 2025">
-      <img class="img-responsive" alt="Landscape Photography" src="./assets/images/photos/small/DSC_0929.PNG">
-      <a href="./project.html" class="project-description">
-        <div class="project-text-holder">
-          <div class="project-text-inner">
-            <h3>Istanbul</h3>
-            <p>Discover more</p>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
 </div>
+
+<div class="blog-container">
+  <section class="blog-feed">
+    <div id="blogFeedContainer" class="blog-feed-items"></div>
+  </section>
 </div>
+
+</main>
 
 <script src="./assets/js/main.85741bff.js"></script>
 <script src="./assets/js/sidebar.js"></script>
-<script src="./assets/js/separator.js"></script>
-<script src="./assets/js/hover-dates.js"></script>
-<script src="./assets/js/init.js"></script>
+<script src="./assets/js/blog.js"></script>
 </body>
 
 </html>

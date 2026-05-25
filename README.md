@@ -100,7 +100,7 @@ ugurkostak.github.io/
 │       └── static-site-review/
 │           └── SKILL.md
 ├── scripts/
-├── tech-writings/
+├── tech-blog/
 ├── .gitignore
 ├── AGENTS.md
 └── README.md
@@ -117,7 +117,7 @@ index.html
 about.html
 cinema.html
 photography.html
-tech-writings.html
+tech-blog.html
 consulting-teaching.html
 contact.html
 ```
@@ -144,7 +144,7 @@ cinema/
 The same pattern can be used for future or growing sections:
 
 ```text
-tech-writings/
+tech-blog/
 photo-blog/
 ```
 
@@ -269,7 +269,7 @@ cinema/metadata.json
 Recommended future examples:
 
 ```text
-tech-writings/metadata.json
+tech-blog/metadata.json
 photo-blog/metadata.json
 ```
 

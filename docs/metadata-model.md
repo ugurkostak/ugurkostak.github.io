@@ -8,7 +8,7 @@ Metadata files describe cinema articles, tech writings, photo stories, and galle
 
 ```text
 cinema/metadata.json
-tech-writings/metadata.json
+tech-blog/metadata.json
 photo-blog/metadata.json
 ```
 

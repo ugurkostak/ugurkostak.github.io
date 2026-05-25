@@ -10,7 +10,7 @@
 ├── about.html
 ├── cinema.html
 ├── photography.html
-├── tech-writings.html
+├── tech-blog.html
 ├── consulting-teaching.html
 ├── contact.html
 ├── assets/
@@ -27,7 +27,7 @@
 ├── cinema/
 │   ├── metadata.json
 │   └── *.html
-├── tech-writings/
+├── tech-blog/
 │   ├── metadata.json
 │   └── *.html
 ├── photo-blog/
@@ -49,7 +49,7 @@ Examples:
 - `about.html`
 - `cinema.html`
 - `photography.html`
-- `tech-writings.html`
+- `tech-blog.html`
 - `consulting-teaching.html`
 - `contact.html`
 
@@ -61,7 +61,7 @@ Examples:
 
 ```text
 cinema/
-tech-writings/
+tech-blog/
 photo-blog/
 ```
 

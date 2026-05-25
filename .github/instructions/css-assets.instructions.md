@@ -27,6 +27,7 @@ applyTo: "assets/**/*"
 - Do not remove responsive behavior.
 - Keep custom CSS readable if editing non-minified CSS.
 - Avoid editing minified vendor/template files if readable source files exist.
+- **Unified blog styling:** Use `assets/css/blog.css` for all collection pages (tech-blog, cinema, photography, etc.). Do not create page-specific CSS files for blog/gallery collections.
 
 ## Performance
 

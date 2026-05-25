@@ -17,6 +17,7 @@ Metadata files support better UX, listing pages, cards, filters, sorting, search
 - Keep titles human-readable and summaries concise.
 - Use ISO-style dates: `YYYY-MM-DD`.
 - Prefer arrays for `tags` and `categories`.
+- **Articles should be ordered by date (newest first).**
 
 ## Recommended Entry Shape
 
@@ -48,3 +49,4 @@ After editing metadata:
 - Check referenced `url` exists.
 - Check referenced image paths exist.
 - Check no duplicate `id` or `slug` values.
+- **Verify articles are sorted by date (newest first).**

@@ -14,6 +14,7 @@ applyTo: "**/*.js"
 - Avoid unnecessary global variables.
 - Preserve compatibility with existing template functions.
 - Handle missing DOM elements gracefully.
+- **Unified blog scripts:** Use `assets/js/blog.js` for all collection pages (tech-blog, cinema, photography, etc.). Do not create page-specific JS files for blog/gallery collections.
 
 ## Sidebar/Layout Rules
 

@@ -1,7 +1,7 @@
 /**
  * Interactive Timeline Filter Component
  * Adds year-based filtering, clickable navigation, and intro text display to timeline separators
- * Reusable across multiple pages: tech-writings.html, cinema.html, photography.html
+ * Reusable across multiple pages: tech-blog.html, cinema.html, photography.html
  * 
  * Usage: Include this script after separator.js on any page with .timeline-section elements
  * The timeline-separator must contain a .timeline-date div for year display

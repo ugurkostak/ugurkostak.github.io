@@ -1,0 +1,48 @@
+{
+    "articles": [
+        {
+            "id": "1",
+            "title": "Stuttgart",
+            "slug": "stuttgart",
+            "description": "Urban landscapes from Stuttgart",
+            "date": "2026-03-15",
+            "author": "Ugur Kostak",
+            "tags": ["urban", "architecture"],
+            "image": "./assets/images/photos/small/DSC_0929.PNG",
+            "featured": true
+        },
+        {
+            "id": "2",
+            "title": "Strasbourg",
+            "slug": "strasbourg",
+            "description": "Historic charm of Strasbourg's streets",
+            "date": "2026-02-10",
+            "author": "Ugur Kostak",
+            "tags": ["travel", "history"],
+            "image": "./assets/images/photos/small/DSC_0994.PNG",
+            "featured": true
+        },
+        {
+            "id": "3",
+            "title": "Athens",
+            "slug": "athens",
+            "description": "Ancient beauty meets modern life",
+            "date": "2026-01-20",
+            "author": "Ugur Kostak",
+            "tags": ["travel", "ancient"],
+            "image": "./assets/images/photos/small/DSC_0929.PNG",
+            "featured": false
+        },
+        {
+            "id": "4",
+            "title": "Istanbul",
+            "slug": "istanbul",
+            "description": "Where continents and cultures meet",
+            "date": "2025-12-01",
+            "author": "Ugur Kostak",
+            "tags": ["travel", "culture"],
+            "image": "./assets/images/photos/small/DSC_0929.PNG",
+            "featured": false
+        }
+    ]
+}
