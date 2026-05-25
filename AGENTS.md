@@ -158,5 +158,5 @@ Before finishing a change, check:
 - Style guide: `docs/style-guide.md`
 - Metadata model: `docs/metadata-model.md`
 - Image workflow: `docs/image-workflow.md`
-- Web developer agent: `docs/agents/web-dev-agent.md`
-- Content editor agent: `docs/agents/content-editor-agent.md`
+- Web developer agent: `.github/agents/web-dev-agent.md`
+- Content editor agent: `.github/agents/content-editor-agent.md`

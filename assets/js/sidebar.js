@@ -5,8 +5,11 @@
     { href: 'about.html', title: 'About', label: 'About' },
     { href: 'cinema.html', title: 'Cinema', label: 'Cinema' },
     { href: 'photography.html', title: 'Photography', label: 'Photography' },
-    { href: 'tech-writings.html', title: 'Tech Writings', label: 'Tech Writings' }
-    // { href: 'contact.html', title: 'Contact', label: 'Contact' } - Hidden until ready
+    { href: 'tech-writings.html', title: 'Tech Writings', label: 'Tech Writings' },
+    { href: 'consulting-teaching.html', title: 'Consulting & Teaching', label: 'Consulting & Teaching' },
+    { href: 'components.html', title: 'Components', label: 'Components' },
+    { href: 'project.html', title: 'Project', label: 'Project' },
+    { href: 'contact.html', title: 'Contact', label: 'Contact' }
   ];
 
   // Site branding and metadata

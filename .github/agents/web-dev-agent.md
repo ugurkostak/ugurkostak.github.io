@@ -29,11 +29,10 @@ The web development agent maintains the technical structure of the static websit
 - `AGENTS.md`
 - `.github/copilot-instructions.md`
 - `.github/instructions/*.instructions.md`
-- `assets/js/sidebar.js`
+- `assets/js/*`
 - `assets/css/*`
 - `scripts/shape_images.py`
-- `docs/architecture.md`
-- `docs/site-structure.md`
+- `docs/*.md`
 
 ## Do Not
 
