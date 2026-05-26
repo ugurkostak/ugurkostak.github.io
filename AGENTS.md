@@ -45,6 +45,7 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 ├── AGENTS.md
 ├── index.html
 ├── about.html
+├── algorithmic-art.html    # Interactive data visualizations and mathematics
 ├── cinema.html
 ├── photography.html
 ├── tech-blog.html
@@ -53,6 +54,13 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 ├── assets/
 │   ├── css/
 │   ├── js/
+│   │   ├── algorithmic-art/
+│   │   │   ├── cube-visualization.js
+│   │   │   ├── prime-visualization.js
+│   │   │   └── vendor/
+│   │   │       └── three.*.js
+│   │   ├── sidebar.js
+│   │   └── blog.js
 │   ├── fonts/
 │   └── images/
 │       ├── consulting/
@@ -60,7 +68,12 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 │       ├── photos/
 │       │   ├── big/
 │       │   └── small/
+│       ├── math/
 │       └── tech/
+├── algorithmic-art/
+│   ├── metadata.json
+│   ├── 3d-cube.html
+│   └── ulam-spiral.html
 ├── cinema/
 │   ├── metadata.json
 │   └── *.html
@@ -85,7 +98,29 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 └── .github/
     ├── copilot-instructions.md
     ├── instructions/
+    │   ├── html.instructions.md
+    │   ├── javascript.instructions.md
+    │   ├── css-assets.instructions.md
+    │   ├── metadata.instructions.md
+    │   └── python-scripts.instructions.md
+    ├── agents/
+    │   ├── web-dev-agent.md
+    │   └── content-editor-agent.md
     └── skills/
+        ├── add-new-page/
+        │   └── SKILL.md
+        ├── update-navigation/
+        │   └── SKILL.md
+        ├── add-blog-item-metadata/
+        │   └── SKILL.md
+        ├── process-images/
+        │   └── SKILL.md
+        ├── content-editing/
+        │   └── SKILL.md
+        ├── static-site-review/
+        │   └── SKILL.md
+        └── timeline-filter-skill/
+            └── SKILL.md
 ```
 
 ## Agent Rules

@@ -10,11 +10,14 @@
 ## Folder Structure
 
 ```text
-assets/images/photos/big/      # original/high-resolution photos
-assets/images/photos/small/    # generated web-sized photos
-assets/images/movies/          # cinema images
-assets/images/tech/            # technology images
-assets/images/consulting/      # consulting/teaching images
+assets/images/
+├── photos/
+│   ├── big/         # original/high-resolution photos
+│   └── small/       # generated web-sized photos
+├── movies/          # cinema images
+├── tech/            # technology images
+├── consulting/      # consulting/teaching images
+└── math/            # algorithmic art and visualization images
 ```
 
 ## Downscaling

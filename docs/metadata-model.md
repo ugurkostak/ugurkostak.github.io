@@ -9,6 +9,7 @@ Metadata files describe cinema articles, tech writings, photo stories, and galle
 ```text
 cinema/metadata.json
 tech-blog/metadata.json
+algorithmic-art/metadata.json
 photo-blog/metadata.json
 ```
 
@@ -68,7 +69,32 @@ photo-blog/metadata.json
 ## Validation Rules
 
 - JSON must parse.
-- `id` and `slug` should be unique.
-- `url` should point to an existing HTML file.
-- image paths should point to existing files.
+- `id` and `slug` should be unique within the section.
+- `url` should point to an existing HTML file in the section folder.
+- image paths should point to existing files in `assets/images/<section>/`.
 - published items should have a date and summary.
+- Articles should be ordered by date (newest first).
+
+## Alternative Metadata Shapes
+
+Different sections may use slightly different metadata structures while maintaining core fields. For example:
+
+**Algorithmic Art:** May include additional fields for technical metadata:
+
+```json
+{
+  "id": "1",
+  "title": "3D Cube Visualization",
+  "slug": "3d-cube",
+  "description": "Interactive 3D rotating cube - Mathematical elegance in 3 dimensions",
+  "date": "2026-05-26",
+  "author": "Ugur Kostak",
+  "category": "visualization",
+  "tags": ["3d", "geometry", "interactive"],
+  "image": "./assets/images/math/3d-cube.jpg",
+  "content": "Description of interactive visualization",
+  "featured": true
+}
+```
+
+Keep metadata human-readable and stable within each section type.

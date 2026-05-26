@@ -12,7 +12,7 @@ The site should remain static and deployable by GitHub Pages without a build pip
 
 ### Reusable Layout
 
-Navigation, sidebar header, mobile bar, and footer should be generated from a single JavaScript layout/sidebar file.
+Navigation, sidebar header, mobile bar, and footer should be generated from a single JavaScript layout/sidebar file (`assets/js/sidebar.js`).
 
 Benefits:
 
@@ -20,6 +20,15 @@ Benefits:
 - makes navigation easier to change
 - keeps pages focused on content
 - reduces inconsistency between pages
+- mobile toggle properly handles pointer/touch/click events
+
+### Modular JavaScript Components
+
+Reusable functionality can be organized into separate modules:
+
+- `assets/js/blog.js` — Collection page rendering and grid layout
+- `assets/js/timeline-filter.js` — Interactive year-based filtering
+- `assets/js/<section>/` — Section-specific visualizations (e.g., Three.js for algorithmic-art)
 
 ### Asset Organization
 
@@ -28,21 +37,23 @@ All front-end assets should live under `assets/`:
 ```text
 assets/css/
 assets/js/
+assets/js/<section>/       # Section-specific modules
+assets/js/<section>/vendor/ # Third-party libraries
 assets/fonts/
-assets/images/
+assets/images/<section>/   # Organized by content type
 ```
 
 ### Metadata-Driven Sections
 
-Sections such as cinema, tech writings, and photo stories should have `metadata.json` files. These files can support:
+Sections such as cinema, algorithmic-art, tech writings, and photo stories should have `metadata.json` files. These files can support:
 
-- cards
-- sorting
-- filtering
+- cards and grids
+- sorting and filtering
 - featured content
 - search
 - related content
 - SEO metadata
+- flexible metadata shapes per section (cinema vs. algorithmic-art may differ)
 
 ## Constraints
 
@@ -50,3 +61,4 @@ Sections such as cinema, tech writings, and photo stories should have `metadata.
 - No heavy client-side framework.
 - Keep relative paths GitHub Pages compatible.
 - Keep original photos separate from optimized web versions.
+- Section-specific vendor libraries (Three.js) can live in `assets/js/<section>/vendor/` without adding external package dependencies.

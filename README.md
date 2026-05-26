@@ -43,8 +43,6 @@ Avoid opening pages directly via `file://`, because browser behavior, relative p
 
 ## Current Project Structure
 
-The temporary `github/` folder should be treated as `.github/` in the final project structure.
-
 ```text
 ugurkostak.github.io/
 ├── assets/
@@ -53,31 +51,43 @@ ugurkostak.github.io/
 │   │   ├── consulting/
 │   │   ├── movies/
 │   │   ├── photos/
+│   │   ├── math/
 │   │   └── tech/
-│   │       ├── accessibility-placeholder.jpg
-│   │       ├── accessibility-placeholder.svg
-│   │       ├── css-placeholder.jpg
-│   │       ├── css-placeholder.svg
-│   │       ├── javascript-placeholder.jpg
-│   │       ├── javascript-placeholder.svg
-│   │       ├── web-dev-placeholder.jpg
-│   │       ├── web-dev-placeholder.svg
-│   │       └── writing.jpg
 │   ├── js/
-│   └── apple-icon-180x180.png
+│   │   ├── algorithmic-art/
+│   │   │   ├── cube-visualization.js
+│   │   │   ├── prime-visualization.js
+│   │   │   └── vendor/
+│   │   │       └── three.*.js (Three.js library)
+│   │   ├── sidebar.js
+│   │   └── blog.js
+│   └── favicon.ico
+├── algorithmic-art/
+│   ├── 3d-cube.html
+│   ├── ulam-spiral.html
+│   └── metadata.json
 ├── cinema/
 │   ├── aftersun.html
 │   ├── banshees-of-inisherin.html
 │   ├── birdman.html
 │   ├── everything-everywhere-all-at-once.html
-│   ├── metadata.json
 │   ├── tar.html
-│   └── three-colors-trilogy.html
+│   ├── three-colors-trilogy.html
+│   └── metadata.json
+├── photography/
+│   └── (future photo content)
+├── tech-blog/
+│   └── (tech articles)
 ├── docs/
-│   ├── agents/
+│   ├── agentic-strategy.md
 │   ├── architecture.md
 │   ├── site-structure.md
-│   └── style-guide.md
+│   ├── style-guide.md
+│   ├── metadata-model.md
+│   ├── image-workflow.md
+│   └── agents/
+│       ├── web-dev-agent.md
+│       └── content-editor-agent.md
 ├── .github/
 │   ├── copilot-instructions.md
 │   ├── instructions/
@@ -86,6 +96,9 @@ ugurkostak.github.io/
 │   │   ├── css-assets.instructions.md
 │   │   ├── metadata.instructions.md
 │   │   └── python-scripts.instructions.md
+│   ├── agents/
+│   │   ├── web-dev-agent.md
+│   │   └── content-editor-agent.md
 │   └── skills/
 │       ├── add-new-page/
 │       │   └── SKILL.md
@@ -97,10 +110,12 @@ ugurkostak.github.io/
 │       │   └── SKILL.md
 │       ├── content-editing/
 │       │   └── SKILL.md
-│       └── static-site-review/
+│       ├── static-site-review/
+│       │   └── SKILL.md
+│       └── timeline-filter-skill/
 │           └── SKILL.md
 ├── scripts/
-├── tech-blog/
+│   └── shape_images.py
 ├── .gitignore
 ├── AGENTS.md
 └── README.md
@@ -115,6 +130,7 @@ Recommended root pages:
 ```text
 index.html
 about.html
+algorithmic-art.html      # Interactive data visualizations, mathematics, and patterns
 cinema.html
 photography.html
 tech-blog.html
@@ -128,8 +144,9 @@ These pages are high-level entry points and should link into detailed section pa
 
 Detailed pages should live inside section folders.
 
-Current cinema example:
+Current examples:
 
+**Cinema:**
 ```text
 cinema/
 ├── metadata.json
@@ -139,6 +156,14 @@ cinema/
 ├── everything-everywhere-all-at-once.html
 ├── tar.html
 └── three-colors-trilogy.html
+```
+
+**Algorithmic Art** (interactive data visualizations, mathematics, and patterns):
+```text
+algorithmic-art/
+├── metadata.json
+├── 3d-cube.html           # Interactive 3D cube
+└── ulam-spiral.html       # Prime number visualization
 ```
 
 The same pattern can be used for future or growing sections:
@@ -153,6 +178,7 @@ Each section can contain:
 - individual HTML pages
 - a `metadata.json` file
 - references to images in `assets/images/...`
+- section-specific JavaScript modules in `assets/js/<section>/`
 
 ## Reusable Layout Strategy
 
@@ -197,24 +223,17 @@ assets/
 │   ├── consulting/
 │   ├── movies/
 │   ├── photos/
+│   ├── math/
 │   └── tech/
-└── js/
-```
-
-Recommended refinement as the project grows:
-
-```text
-assets/
-├── css/
 ├── js/
-├── fonts/
-└── images/
-    ├── consulting/
-    ├── movies/
-    ├── photos/
-    │   ├── big/
-    │   └── small/
-    └── tech/
+│   ├── algorithmic-art/
+│   │   ├── cube-visualization.js
+│   │   ├── prime-visualization.js
+│   │   └── vendor/
+│   │       └── three.*.js (Three.js WebGL library)
+│   ├── sidebar.js
+│   └── blog.js
+└── favicon.ico
 ```
 
 Guidelines:
@@ -222,6 +241,8 @@ Guidelines:
 - Keep JavaScript in `assets/js/`.
 - Keep fonts in `assets/fonts/`.
 - Keep images in `assets/images/<section>/`.
+- Keep section-specific modules in `assets/js/<section>/`.
+- Use unified blog styling: `assets/js/blog.js` and vendor libraries in `assets/js/<section>/vendor/`.
 - If CSS is still in the root, consider moving it to `assets/css/` when paths are updated safely.
 - Avoid scattering static assets in the repository root.
 

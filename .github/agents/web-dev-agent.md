@@ -29,7 +29,9 @@ The web development agent maintains the technical structure of the static websit
 - `AGENTS.md`
 - `.github/copilot-instructions.md`
 - `.github/instructions/*.instructions.md`
-- `assets/js/*`
+- `assets/js/sidebar.js` (mobile toggle, navigation, layout)
+- `assets/js/blog.js` (collection page rendering)
+- `assets/js/<section>/` (section-specific visualizations and behaviors)
 - `assets/css/*`
 - `scripts/shape_images.py`
 - `docs/*.md`
@@ -46,8 +48,9 @@ The web development agent maintains the technical structure of the static websit
 
 Before finishing:
 
-- validate navigation
-- validate paths
-- validate mobile behavior
+- validate navigation and sidebar toggle
+- validate paths and asset references
+- validate mobile behavior (sidebar open/close, touch handling)
 - validate metadata JSON if changed
 - check accessibility basics
+- validate section-specific visualizations load correctly
