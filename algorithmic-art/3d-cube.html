@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="3D Cube Visualization - Interactive mathematical beauty" name="description">
+  <meta content="3D Cube Visualization - Interactive algorithmic art" name="description">
   <meta name="google" content="notranslate" />
   <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
@@ -18,90 +18,71 @@
   <title>3D Cube Visualization</title>
 
   <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/blog.css" rel="stylesheet">
   <style>
-    body {
-      background: #111;
-      color: #fff;
-    }
-    
-    canvas {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #111; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    header { text-align: center; margin-bottom: 40px; max-width: 800px; }
+    h1 { font-size: 2.2em; margin-bottom: 8px; color: #ff6360; }
+    .subtitle { font-size: 1.05em; color: #999; margin-bottom: 12px; }
+    .description { font-size: 0.95em; color: #ccc; margin-bottom: 18px; }
+
+    main { display: flex; gap: 32px; max-width: 1200px; align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+
+    .canvas-container { flex: 1; min-width: 320px; display: flex; justify-content: center; align-items: center; background: #1a1a1a; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    canvas { display: block; border-radius: 4px; width: 100%; height: 60vh; max-height: 720px; }
+
+    .info-panel { flex: 0 0 300px; background: #1a1a1a; padding: 24px; border-radius: 8px; border-left: 4px solid #ff6360; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    .info-panel h2 { font-size: 1.25em; margin-bottom: 12px; color: #ff6360; }
+    .legend { margin-bottom: 16px; }
+    .legend-item { display: flex; align-items: center; margin-bottom: 10px; font-size: 0.95em; }
+    .legend-color { width: 18px; height: 18px; border-radius: 2px; margin-right: 12px; flex-shrink: 0; }
+    .legend-color.cube { background: #4caf50; }
+    .description-text { font-size: 0.95em; color: #ccc; line-height: 1.6; }
+
+    @media (max-width: 900px) { main { gap: 20px; } h1 { font-size: 1.8em; } .info-panel { flex-basis: 100%; order: 2; } .canvas-container { flex-basis: 100%; order: 1; } }
+    @media (max-width: 600px) { body { padding: 10px; } h1 { font-size: 1.5em; } }
   </style>
 </head>
 
 <body>
 
-<canvas id="canvas"></canvas>
+<header>
+  <h1>3D Cube Visualization</h1>
+  <p class="subtitle">Interactive algorithmic art — 3D cube</p>
+  <p class="description">Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
+</header>
 
-<script type="module">
-import * as THREE from "../assets/js/math/vendor/three.module.min.js";
+<main>
+  <div class="canvas-container">
+    <canvas id="cubeCanvas" aria-label="3D cube visualization"></canvas>
+  </div>
 
-// Scene
-const scene = new THREE.Scene();
+  <div class="info-panel">
+    <h2>About This Visualization</h2>
 
-// Camera
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
-camera.position.z = 5;
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color cube"></div>
+        <span>Interactive 3D Cube</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background:#ff6360"></div>
+        <span>MeshNormal shading</span>
+      </div>
+    </div>
 
-// Renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.getElementById('canvas') });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x111111);
+    <div class="description-text">
+      <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
 
-// Cube
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshNormalMaterial();
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+      <p style="margin-top:12px;"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+    </div>
+  </div>
+</main>
 
-// Mouse control
-let isDragging = false;
-let prev = { x: 0, y: 0 };
-
-document.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  prev = { x: e.clientX, y: e.clientY };
-});
-
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-
-  const dx = e.clientX - prev.x;
-  const dy = e.clientY - prev.y;
-
-  cube.rotation.y += dx * 0.01;
-  cube.rotation.x += dy * 0.01;
-
-  prev = { x: e.clientX, y: e.clientY };
-});
-
-// Animation loop
-function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
-}
-animate();
-
-// Resize
-window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-</script>
-
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script type="module" src="../assets/js/math/cube-visualization.js"></script>
 </body>
 
 </html>
