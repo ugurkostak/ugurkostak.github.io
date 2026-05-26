@@ -158,9 +158,46 @@
   }
 
   // Initialize sidebar on DOM ready or immediately if already loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderSidebar);
-  } else {
+  function initSidebar() {
     renderSidebar();
+
+    // Mobile toggle: attach a click handler to the navbar-toggle button
+    var btn = document.querySelector('.navbar-toggle');
+    var navCollapse = document.getElementById('navbar-collapse');
+    if (btn && navCollapse) {
+      // Ensure initial ARIA state
+      btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
+
+      btn.addEventListener('click', function () {
+        var isOpen = navCollapse.classList.toggle('open');
+        if (isOpen) {
+          navCollapse.style.display = 'block';
+          btn.classList.remove('collapsed');
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          navCollapse.style.display = '';
+          btn.classList.add('collapsed');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close when clicking outside on small screens
+      document.addEventListener('click', function (e) {
+        if (!navCollapse.contains(e.target) && !btn.contains(e.target) && window.getComputedStyle(btn).display !== 'none') {
+          if (navCollapse.classList.contains('open')) {
+            navCollapse.classList.remove('open');
+            navCollapse.style.display = '';
+            btn.classList.add('collapsed');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebar);
+  } else {
+    initSidebar();
   }
 })();
