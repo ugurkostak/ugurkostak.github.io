@@ -26,6 +26,7 @@
     if (path.includes('tech-blog')) return 'tech-blog';
     if (path.includes('cinema')) return 'cinema';
     if (path.includes('photo')) return 'photography';
+    if (path.includes('math-blog')) return 'math-blog';
     return null;
   }
 
@@ -37,7 +38,8 @@
     const pathMap = {
       'tech-blog': './tech-blog/metadata.json',
       'cinema': './cinema/metadata.json',
-      'photography': './photography/metadata.json'
+      'photography': './photography/metadata.json',
+      'math-blog': './math-blog/metadata.json'
     };
     return pathMap[page] || './tech-blog/metadata.json';
   }
@@ -162,7 +164,7 @@
       }
       
       const data = await response.json();
-      const articles = data.articles || [];
+      const articles = data.articles || data;
       console.log('Blog.js: Loaded', articles.length, 'articles');
 
       articlesData = articles;
@@ -238,7 +240,7 @@
     const page = detectPage();
     console.log('Blog.js: Initializing for page:', page);
     
-    if (page === 'tech-blog' || page === 'cinema' || page === 'photography') {
+    if (page === 'tech-blog' || page === 'cinema' || page === 'photography' || page === 'math-blog') {
       // All collection pages use vertical feed layout
       loadAndRenderVerticalFeed();
     } else {
