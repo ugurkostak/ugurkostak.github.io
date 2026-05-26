@@ -161,34 +161,35 @@
   function initSidebar() {
     renderSidebar();
 
-    // Mobile toggle: attach a click handler to the navbar-toggle button
-    var btn = document.querySelector('.navbar-toggle');
+    // Mobile toggle: attach a click handler to all navbar-toggle buttons
+    var btns = document.querySelectorAll('.navbar-toggle');
     var navCollapse = document.getElementById('navbar-collapse');
-    if (btn && navCollapse) {
-      // Ensure initial ARIA state
-      btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
+    if (btns && btns.length && navCollapse) {
+      // Ensure initial ARIA state on each button
+      btns.forEach(function(btn) {
+        btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
 
-      btn.addEventListener('click', function () {
-        var isOpen = navCollapse.classList.toggle('open');
-        if (isOpen) {
-          navCollapse.style.display = 'block';
-          btn.classList.remove('collapsed');
-          btn.setAttribute('aria-expanded', 'true');
-        } else {
-          navCollapse.style.display = '';
-          btn.classList.add('collapsed');
-          btn.setAttribute('aria-expanded', 'false');
-        }
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = navCollapse.classList.toggle('open');
+          if (isOpen) {
+            navCollapse.style.display = 'block';
+            btns.forEach(function(b){ b.classList.remove('collapsed'); b.setAttribute('aria-expanded','true'); });
+          } else {
+            navCollapse.style.display = '';
+            btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
+          }
+        });
       });
 
       // Close when clicking outside on small screens
       document.addEventListener('click', function (e) {
-        if (!navCollapse.contains(e.target) && !btn.contains(e.target) && window.getComputedStyle(btn).display !== 'none') {
+        var clickedInside = navCollapse.contains(e.target) || Array.from(btns).some(function(b){ return b.contains(e.target); });
+        if (!clickedInside && window.getComputedStyle(btns[0]).display !== 'none') {
           if (navCollapse.classList.contains('open')) {
             navCollapse.classList.remove('open');
             navCollapse.style.display = '';
-            btn.classList.add('collapsed');
-            btn.setAttribute('aria-expanded', 'false');
+            btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
           }
         }
       });
