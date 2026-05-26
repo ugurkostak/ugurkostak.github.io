@@ -162,37 +162,52 @@
     renderSidebar();
 
     // Mobile toggle: attach a click handler to all navbar-toggle buttons
-    var btns = document.querySelectorAll('.navbar-toggle');
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.navbar-toggle'));
     var navCollapse = document.getElementById('navbar-collapse');
+    var lastToggleAt = 0;
     if (btns && btns.length && navCollapse) {
-      // Ensure initial ARIA state on each button
-      btns.forEach(function(btn) {
-        btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
+      // Helper to open/close
+      function openNav() {
+        navCollapse.classList.add('open');
+        navCollapse.style.display = 'block';
+        btns.forEach(function(b){ b.classList.remove('collapsed'); b.setAttribute('aria-expanded','true'); });
+      }
+      function closeNav() {
+        navCollapse.classList.remove('open');
+        navCollapse.style.display = '';
+        btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
+      }
 
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = navCollapse.classList.toggle('open');
-          if (isOpen) {
-            navCollapse.style.display = 'block';
-            btns.forEach(function(b){ b.classList.remove('collapsed'); b.setAttribute('aria-expanded','true'); });
-          } else {
-            navCollapse.style.display = '';
-            btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
-          }
-        });
+      function toggleHandler(e) {
+        try { e.preventDefault(); } catch (err) {}
+        e.stopPropagation();
+        lastToggleAt = Date.now();
+        if (navCollapse.classList.contains('open')) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      }
+
+      // Attach pointer/touch/click handlers
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', toggleHandler, false);
+        btn.addEventListener('touchstart', toggleHandler, {passive:false});
+        btn.addEventListener('pointerdown', toggleHandler, false);
+        // Ensure ARIA initial state
+        btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
       });
 
-      // Close when clicking outside on small screens
+      // Close when clicking outside on small screens (ignore immediate clicks after toggle to avoid race)
       document.addEventListener('click', function (e) {
-        var clickedInside = navCollapse.contains(e.target) || Array.from(btns).some(function(b){ return b.contains(e.target); });
+        if (Date.now() - lastToggleAt < 350) return;
+        var clickedInside = navCollapse.contains(e.target) || btns.some(function(b){ return b.contains(e.target); });
         if (!clickedInside && window.getComputedStyle(btns[0]).display !== 'none') {
           if (navCollapse.classList.contains('open')) {
-            navCollapse.classList.remove('open');
-            navCollapse.style.display = '';
-            btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
+            closeNav();
           }
         }
-      });
+      }, false);
     }
   }
 
