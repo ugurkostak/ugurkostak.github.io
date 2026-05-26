@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Beauty of Prime Numbers - Ulam Spiral visualization" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+
+  <title>Beauty of Prime Numbers - Ulam Spiral</title>
+
+  <link href="../assets/css/main.82cfd66e.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #ff6360;
+    }
+
+    .subtitle {
+      font-size: 1.1em;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 0.95em;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    main {
+      display: flex;
+      gap: 40px;
+      max-width: 1200px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .canvas-container {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    canvas {
+      display: block;
+      border-radius: 4px;
+    }
+
+    .info-panel {
+      flex: 0 0 300px;
+      background: #1a1a1a;
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid #ff6360;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .info-panel h2 {
+      font-size: 1.3em;
+      margin-bottom: 16px;
+      color: #ff6360;
+    }
+
+    .legend {
+      margin-bottom: 24px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.95em;
+    }
+
+    .legend-color {
+      width: 18px;
+      height: 18px;
+      border-radius: 2px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .legend-color.prime {
+      background-color: #ff6360;
+    }
+
+    .legend-color.composite {
+      background-color: #333;
+    }
+
+    .legend-color.one {
+      background-color: #4caf50;
+    }
+
+    .info-box {
+      background: #222;
+      padding: 16px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      line-height: 1.6;
+      display: none;
+      margin-top: 16px;
+    }
+
+    #primeInfo {
+      display: none;
+    }
+
+    .description-text {
+      font-size: 0.9em;
+      color: #aaa;
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        gap: 20px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .info-panel {
+        flex-basis: 100%;
+        order: 2;
+      }
+
+      .canvas-container {
+        flex-basis: 100%;
+        order: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      header {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Beauty of Prime Numbers</h1>
+  <p class="subtitle">Ulam Spiral Visualization</p>
+  <p class="description">
+    Discover the mesmerizing patterns hidden in prime numbers. The Ulam Spiral arranges numbers in a spiral pattern, revealing unexpected distributions and structures in primes.
+  </p>
+</header>
+
+<main>
+  <div class="canvas-container">
+    <canvas id="primeCanvas"></canvas>
+  </div>
+
+  <div class="info-panel">
+    <h2>About This Visualization</h2>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color prime"></div>
+        <span>Prime Numbers</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color composite"></div>
+        <span>Composite Numbers</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color one"></div>
+        <span>The Number 1</span>
+      </div>
+    </div>
+
+    <div id="primeInfo" class="info-box"></div>
+
+    <div class="description-text">
+      <strong>Hover over the grid</strong> to explore individual numbers and see whether they are prime or composite.
+      
+      <p style="margin-top: 12px;">
+        The <strong>Ulam Spiral</strong> is a simple but striking pattern discovered by mathematician Stanislaw Ulam. When natural numbers are arranged in a spiral and primes are highlighted, surprising diagonal and linear patterns emerge—suggesting deep mathematical structure underlying the distribution of primes.
+      </p>
+      
+      <p style="margin-top: 12px;">
+        This visualization displays the first 10,000 numbers arranged in a spiral pattern, with prime numbers highlighted in red.
+      </p>
+    </div>
+  </div>
+</main>
+
+<script src="../assets/js/prime-visualization.js"></script>
+
+</body>
+
+</html>
