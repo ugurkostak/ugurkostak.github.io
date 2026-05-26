@@ -1,13 +1,26 @@
 [
   {
     "id": "1",
+    "title": "3D Cube Visualization",
+    "slug": "3d-cube",
+    "description": "Interactive 3D rotating cube - Mathematical elegance in 3 dimensions",
+    "date": "2026-05-26",
+    "author": "Ugur Kostak",
+    "category": "visualization",
+    "tags": ["3d", "geometry", "interactive"],
+    "image": "./assets/images/math/3d-cube.jpg",
+    "content": "Interactive 3D cube visualization",
+    "featured": true
+  },
+  {
+    "id": "2",
     "title": "The Beauty of Prime Numbers",
-    "slug": "beauty-of-math",
-    "description": "Exploring the elegance and mystery of prime numbers in mathematics",
+    "slug": "ulam-spiral",
+    "description": "Exploring the elegance and mystery of prime numbers with Ulam Spiral visualization",
     "date": "2026-05-20",
     "author": "Ugur Kostak",
     "category": "mathematics",
-    "tags": ["math", "numbers", "beauty"],
+    "tags": ["math", "primes", "patterns"],
     "image": "./assets/images/math/prime-numbers.jpg",
     "content": "Placeholder article about the beauty of mathematics",
     "featured": true
