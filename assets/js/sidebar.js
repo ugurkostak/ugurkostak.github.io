@@ -6,7 +6,7 @@
     { href: 'cinema.html', title: 'Cinema', label: 'Cinema' },
     { href: 'photography.html', title: 'Photography', label: 'Photography' },
     { href: 'tech-blog.html', title: 'Tech Blog', label: 'Tech Blog' },
-    { href: 'math-blog.html', title: 'Beauty of the Math', label: 'Math' }
+    { href: 'algorithmic-art.html', title: 'Algorithmic Art', label: 'Algorithmic Art' }
   ];
 
   // Site branding and metadata
