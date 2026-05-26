@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "title": "The Beauty of Prime Numbers",
+    "slug": "beauty-of-math",
+    "description": "Exploring the elegance and mystery of prime numbers in mathematics",
+    "date": "2026-05-20",
+    "author": "Ugur Kostak",
+    "category": "mathematics",
+    "tags": ["math", "numbers", "beauty"],
+    "image": "./assets/images/math/prime-numbers.jpg",
+    "content": "Placeholder article about the beauty of mathematics",
+    "featured": true
+  }
+]
