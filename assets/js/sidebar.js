@@ -5,7 +5,8 @@
     { href: 'about.html', title: 'About', label: 'About' },
     { href: 'cinema.html', title: 'Cinema', label: 'Cinema' },
     { href: 'photography.html', title: 'Photography', label: 'Photography' },
-    { href: 'tech-blog.html', title: 'Tech Blog', label: 'Tech Blog' }
+    { href: 'tech-blog.html', title: 'Tech Blog', label: 'Tech Blog' },
+    { href: 'math-blog.html', title: 'Beauty of the Math', label: 'Math' }
   ];
 
   // Site branding and metadata
@@ -56,6 +57,10 @@
     }
 
     if (item.href === 'tech-blog.html' && window.location.pathname.indexOf('/tech-blog/') !== -1) {
+      return true;
+    }
+
+    if (item.href === 'math-blog.html' && window.location.pathname.indexOf('/math-blog/') !== -1) {
       return true;
     }
 
