@@ -152,10 +152,75 @@
     navCollapseRoot.appendChild(navFooter);
   }
 
+  /**
+   * Setup mobile navbar toggle functionality
+   */
+  function setupMobileToggle() {
+    var toggleButton = document.querySelector('.navbar-toggle');
+    var navbar = document.querySelector('.sidebar');
+    var navbarCollapse = document.getElementById('navbar-collapse');
+    
+    if (!toggleButton || !navbar || !navbarCollapse) {
+      console.warn('Sidebar: Required elements not found for mobile toggle');
+      return;
+    }
+    
+    // Click handler for toggle button
+    toggleButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      var isCollapsed = toggleButton.classList.contains('collapsed');
+      
+      if (isCollapsed) {
+        // Show sidebar
+        toggleButton.classList.remove('collapsed');
+        navbar.style.display = 'block';
+        navbar.style.position = 'fixed';
+        navbar.style.top = '50px';
+        navbar.style.left = '0';
+        navbar.style.right = '0';
+        navbar.style.width = '100%';
+        navbar.style.zIndex = '1030';
+        navbar.style.backgroundColor = '#fff';
+        navbar.style.overflowY = 'auto';
+        navbar.style.maxHeight = 'calc(100vh - 50px)';
+      } else {
+        // Hide sidebar
+        toggleButton.classList.add('collapsed');
+        navbar.style.display = 'none';
+      }
+    });
+    
+    // Close sidebar when clicking on a link
+    var navLinks = navbarCollapse.querySelectorAll('a');
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggleButton.classList.add('collapsed');
+        navbar.style.display = 'none';
+      });
+    });
+    
+    // Close sidebar when clicking outside of it
+    document.addEventListener('click', function (e) {
+      var isClickInsideNavbar = navbar.contains(e.target);
+      var isClickOnButton = toggleButton.contains(e.target);
+      
+      if (!isClickInsideNavbar && !isClickOnButton && navbar.style.display === 'block') {
+        toggleButton.classList.add('collapsed');
+        navbar.style.display = 'none';
+      }
+    });
+  }
+
   // Initialize sidebar on DOM ready or immediately if already loaded
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderSidebar);
+    document.addEventListener('DOMContentLoaded', function () {
+      renderSidebar();
+      setupMobileToggle();
+    });
   } else {
     renderSidebar();
+    setupMobileToggle();
   }
 })();

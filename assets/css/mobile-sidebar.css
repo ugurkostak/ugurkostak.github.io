@@ -1,0 +1,22 @@
+/* Mobile sidebar visibility handler */
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none !important;
+  }
+  
+  .navbar-toggle {
+    cursor: pointer;
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+  
+  .sidebar {
+    display: block !important;
+  }
+}
