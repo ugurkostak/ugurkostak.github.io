@@ -1,6 +1,6 @@
 ---
 name: process-images
-description: "Use when: adding, resizing, optimizing, or preparing images for photography, cinema, tech-blog, algorithmic-art, or soft-skills content. Excludes consulting/teaching image workflows unless explicitly requested."
+description: "Use when: adding, resizing, optimizing, or preparing images for photography, cinema, tech-blog, algorithmic-art, or soft-skills content."
 ---
 
 # Skill: Process Images

@@ -1,6 +1,6 @@
 ---
 name: web-dev-agent
-description: "Use when: maintaining static website structure, navigation, reusable layout, metadata wiring, assets, accessibility, responsive behavior, blog collections, algorithmic-art visualizations, or soft-skills content pages. Excludes consulting/teaching navigation unless explicitly requested."
+description: "Use when: maintaining static website structure, navigation, reusable layout, metadata wiring, assets, accessibility, responsive behavior, blog collections, algorithmic-art visualizations, or soft-skills content pages."
 tools: [read, search, edit, execute]
 ---
 
@@ -9,8 +9,6 @@ tools: [read, search, edit, execute]
 ## Role
 
 The web development agent maintains the technical structure of the static website for active content areas: photography, cinema, tech-blog, algorithmic-art, and soft-skills/professional-growth writing.
-
-Consulting and teaching are not active content sections and should not be added to navigation, metadata workflows, or page templates unless explicitly requested.
 
 ## Responsibilities
 
@@ -53,7 +51,6 @@ Consulting and teaching are not active content sections and should not be added 
 - Break root or nested relative paths.
 - Overwrite original photos.
 - Rename published slugs without asking.
-- Add consulting/teaching as a nav item, metadata section, or content workflow unless explicitly requested.
 
 ## Checklist
 
@@ -63,6 +60,5 @@ Before finishing:
 - validate paths and asset references
 - validate mobile behavior (sidebar open/close, touch handling)
 - validate metadata JSON if changed
-- validate soft-skills content uses the chosen content section and does not introduce consulting/teaching scope
 - check accessibility basics
 - validate section-specific visualizations load correctly

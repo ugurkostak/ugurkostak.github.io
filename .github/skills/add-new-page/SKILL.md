@@ -1,6 +1,6 @@
 ---
 name: add-new-page
-description: "Use when: creating a new static root page or section subpage for photography, cinema, tech-blog, algorithmic-art, or soft-skills content. Excludes consulting/teaching pages unless explicitly requested."
+description: "Use when: creating a new static root page or section subpage for photography, cinema, tech-blog, algorithmic-art, or soft-skills content."
 ---
 
 # Skill: Add New Static Page
@@ -8,8 +8,6 @@ description: "Use when: creating a new static root page or section subpage for p
 ## Use When
 
 Use this skill when creating a new root page or section subpage for active content areas: photography, cinema, tech-blog, algorithmic-art, and soft-skills writing.
-
-Do not create consulting/teaching pages unless the user explicitly asks for that scope.
 
 ## Steps
 
@@ -28,7 +26,6 @@ Do not create consulting/teaching pages unless the user explicitly asks for that
 - Do not copy full sidebar/header/footer markup into the page.
 - Do not introduce a framework.
 - Do not rename existing URLs unless requested.
-- Do not add consulting/teaching content, services, or navigation unless explicitly requested.
 
 ## Final Response
 

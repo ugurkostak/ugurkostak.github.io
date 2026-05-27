@@ -1,6 +1,6 @@
 ---
 name: static-site-review
-description: "Use when: reviewing larger static-site changes for navigation, metadata, links, images, accessibility, responsive behavior, active content scope, and no unintended consulting/teaching content."
+description: "Use when: reviewing larger static-site changes for navigation, metadata, links, images, accessibility, responsive behavior, and active content scope."
 ---
 
 # Skill: Static Site Review
@@ -23,7 +23,6 @@ Use this skill before finishing larger website changes.
 - Meaningful images have useful alt text.
 - No unnecessary dependency was added.
 - No duplicate layout markup was introduced.
-- No consulting/teaching content, navigation, metadata, or service copy was introduced unless explicitly requested.
 - Soft-skills content is placed in the intended section and remains practical, specific, and non-salesy.
 
 ## Final Response
