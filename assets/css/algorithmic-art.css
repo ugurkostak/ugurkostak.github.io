@@ -25,6 +25,12 @@
   border-radius: 4px;
   background: #fafafa;
   border: 1px solid #eee;
+  /* Let pointer/touch gestures be consumed by the visualization rather than
+     scrolling the page. `none` disables panning and pinch-zoom inside the
+     canvas so drags rotate the cube without moving the page. */
+  touch-action: none;
+  -ms-touch-action: none;
+  overscroll-behavior: contain;
 }
 
 /* Info panel: fixed width, sits to the right of the canvas */

@@ -51,11 +51,25 @@ function initCube() {
     cube.rotation.y += dx * 0.01;
     cube.rotation.x += dy * 0.01;
     prev = { x: e.clientX, y: e.clientY };
+    if (e.cancelable) e.preventDefault();
   }
 
   canvas.addEventListener('pointerdown', onPointerDown, { passive: false });
   window.addEventListener('pointerup', onPointerUp);
-  window.addEventListener('pointermove', onPointerMove);
+  window.addEventListener('pointermove', onPointerMove, { passive: false });
+
+  // Capture the pointer so moves keep targeting the canvas even if the finger
+  // strays outside it during a drag.
+  canvas.addEventListener('pointerdown', (e) => {
+    try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+
+  // Belt-and-suspenders: on iOS Safari, `touch-action: none` may still let the
+  // page scroll if a touchmove escapes pointer handling. Block it explicitly
+  // while a drag is active.
+  canvas.addEventListener('touchmove', (e) => {
+    if (isDragging && e.cancelable) e.preventDefault();
+  }, { passive: false });
 
   // Animation loop
   function animate() {
