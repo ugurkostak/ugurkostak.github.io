@@ -3,13 +3,7 @@
  *
  * Contains ONLY styles specific to the canvas visualizations and info panels.
  * Global layout, typography, and heading styles come from main.css and custom.css.
- * Do NOT add body/main/h1/h2 global overrides here — they conflict with Bootstrap
- * and the standard sidebar layout.
  */
-
-/* ============================================================================
-   CANVAS CONTAINER
-   ============================================================================ */
 
 /* ============================================================================
    CANVAS CONTAINER
@@ -18,32 +12,27 @@
 .canvas-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background: #fff;
   border-radius: 8px;
-  padding: 12px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  overflow: hidden;
 }
 
-/* Cube canvas: JS controls height, CSS just lets it fill the width */
-#cubeCanvas {
-  display: block;
-  border-radius: 4px;
-  width: 100% !important;
-}
-
-/* Prime spiral canvas: JS sets fixed pixel dimensions; scale down on small screens */
+/* Both canvases render as a centered square that scales with column width */
+#cubeCanvas,
 #primeCanvas {
   display: block;
   border-radius: 4px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
   height: auto;
 }
 
 /* ============================================================================
-   INFO PANEL (right-hand column beside canvas)
+   INFO PANEL (right-hand column)
    ============================================================================ */
 
 .info-panel {
@@ -52,8 +41,6 @@
   border-radius: 8px;
   border-left: 4px solid #ff6360;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 20px;
 }
 
 /* ============================================================================
@@ -61,14 +48,14 @@
    ============================================================================ */
 
 .legend {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  font-size: 0.95em;
+  margin-bottom: 10px;
+  font-size: 14px;
   color: #666;
 }
 
@@ -80,39 +67,36 @@
   flex-shrink: 0;
 }
 
-.legend-color.prime    { background-color: #ff6360; }
+.legend-color.prime     { background-color: #ff6360; }
 .legend-color.composite { background-color: #e0e0e0; }
-.legend-color.one      { background-color: #4caf50; }
-.legend-color.cube     { background: #4caf50; }
-.legend-color.matte    { background: #ff6360; }
+.legend-color.one       { background-color: #4caf50; }
+.legend-color.cube      { background: #4caf50; }
+.legend-color.matte     { background: #ff6360; }
 
 /* ============================================================================
-   INFO BOX
+   INFO BOX & DESCRIPTION
    ============================================================================ */
 
 .info-box {
   background: #f9f9f9;
-  padding: 16px;
+  padding: 14px;
   border-radius: 4px;
-  font-size: 0.9em;
-  line-height: 1.6;
+  font-size: 13px;
+  line-height: 1.5;
   margin-bottom: 16px;
   border: 1px solid #e0e0e0;
   color: #666;
+  min-height: 40px;
 }
 
-/* ============================================================================
-   DESCRIPTION TEXT
-   ============================================================================ */
-
 .description-text {
-  font-size: 0.95em;
+  font-size: 14px;
   color: #666;
   line-height: 1.6;
 }
 
 .description-text p {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .description-text p:last-child {
@@ -120,7 +104,7 @@
 }
 
 .info-content-interaction {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #666;
 }
 
@@ -128,13 +112,21 @@
    RESPONSIVE
    ============================================================================ */
 
+@media (max-width: 991px) {
+  /* Tablet & below: info-panel stacks below canvas (Bootstrap handles via grid) */
+  .canvas-container {
+    padding: 16px;
+  }
+}
+
 @media (max-width: 600px) {
   .canvas-container {
-    padding: 8px;
+    padding: 10px;
   }
 
   .info-panel {
-    position: static;
+    padding: 18px;
   }
 }
+
 
