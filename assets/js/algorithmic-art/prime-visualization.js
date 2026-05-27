@@ -101,8 +101,23 @@
     // Draw initial
     draw();
 
-    // Hover info
-    let hoveredNum = null;
+    // Info panel — persistent; initialized with the spiral's center (2, the first prime)
+    const infoEl = document.getElementById('primeInfo');
+
+    function renderInfo(point) {
+      if (!infoEl || !point) return;
+      infoEl.innerHTML = `
+        <strong>Number:</strong> ${point.num}<br>
+        <strong>Type:</strong> ${point.isPrime ? '<span style="color: #ff6360;">Prime</span>' : '<span style="color: #999;">Composite</span>'}<br>
+        <strong>Position:</strong> (${point.x}, ${point.y})
+      `;
+    }
+
+    // Default to the first prime (2) so the panel always shows something meaningful
+    const initialPoint = spiral.find(p => p.num === 2) || spiral[0];
+    renderInfo(initialPoint);
+
+    // Hover info — updates on move, persists last value on leave
     canvas.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
       const x = e.clientX - rect.left - 20;
@@ -111,30 +126,9 @@
       const gridX = Math.floor(x / cellSize) - Math.floor(size / 2);
       const gridY = Math.floor(y / cellSize) - Math.floor(size / 2);
 
-      hoveredNum = null;
-      spiral.forEach(point => {
-        if (point.x === gridX && point.y === gridY) {
-          hoveredNum = point;
-        }
-      });
-
-      // Show info — keep the panel visible at all times with a placeholder
-      const infoEl = document.getElementById('primeInfo');
-      if (infoEl && hoveredNum) {
-        infoEl.innerHTML = `
-          <strong>Number:</strong> ${hoveredNum.num}<br>
-          <strong>Type:</strong> ${hoveredNum.isPrime ? '<span style="color: #ff6360;">Prime</span>' : '<span style="color: #999;">Composite</span>'}<br>
-          <strong>Position:</strong> (${hoveredNum.x}, ${hoveredNum.y})
-        `;
-      } else if (infoEl) {
-        infoEl.innerHTML = '<span class="info-placeholder">Hover the grid to inspect a number.</span>';
-      }
-    });
-
-    canvas.addEventListener('mouseleave', () => {
-      const infoEl = document.getElementById('primeInfo');
-      if (infoEl) {
-        infoEl.innerHTML = '<span class="info-placeholder">Hover the grid to inspect a number.</span>';
+      const hoveredNum = spiral.find(point => point.x === gridX && point.y === gridY);
+      if (hoveredNum) {
+        renderInfo(hoveredNum);
       }
     });
   }
