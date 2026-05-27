@@ -161,27 +161,35 @@
   function initSidebar() {
     renderSidebar();
 
-    // Mobile toggle: attach a click handler to all navbar-toggle buttons
+    // Mobile toggle: attach a single handler to all navbar-toggle buttons.
+    // Safari/iOS fires pointerdown -> touchstart -> click for one tap; binding
+    // multiple events on the same button would flip the menu state several
+    // times per tap. We bind only `click` (no 300ms delay thanks to the
+    // viewport meta) and dedupe with a short cooldown to absorb any stray
+    // synthetic events some browsers still dispatch.
     var btns = Array.prototype.slice.call(document.querySelectorAll('.navbar-toggle'));
     var navCollapse = document.getElementById('navbar-collapse');
     var lastToggleAt = 0;
     if (btns && btns.length && navCollapse) {
-      // Helper to open/close
       function openNav() {
         navCollapse.classList.add('open');
         navCollapse.style.display = 'block';
-        btns.forEach(function(b){ b.classList.remove('collapsed'); b.setAttribute('aria-expanded','true'); });
+        btns.forEach(function (b) { b.classList.remove('collapsed'); b.setAttribute('aria-expanded', 'true'); });
       }
       function closeNav() {
         navCollapse.classList.remove('open');
         navCollapse.style.display = '';
-        btns.forEach(function(b){ b.classList.add('collapsed'); b.setAttribute('aria-expanded','false'); });
+        btns.forEach(function (b) { b.classList.add('collapsed'); b.setAttribute('aria-expanded', 'false'); });
       }
 
       function toggleHandler(e) {
-        try { e.preventDefault(); } catch (err) {}
-        e.stopPropagation();
-        lastToggleAt = Date.now();
+        if (e) {
+          try { e.preventDefault(); } catch (err) {}
+          e.stopPropagation();
+        }
+        var now = Date.now();
+        if (now - lastToggleAt < 300) return;
+        lastToggleAt = now;
         if (navCollapse.classList.contains('open')) {
           closeNav();
         } else {
@@ -189,25 +197,28 @@
         }
       }
 
-      // Attach pointer/touch/click handlers
-      btns.forEach(function(btn) {
+      btns.forEach(function (btn) {
+        // `click` works reliably on iOS Safari, Android Chrome, and desktop
+        // browsers. Binding only one event prevents multi-fire toggling.
         btn.addEventListener('click', toggleHandler, false);
-        btn.addEventListener('touchstart', toggleHandler, {passive:false});
-        btn.addEventListener('pointerdown', toggleHandler, false);
-        // Ensure ARIA initial state
+        // Improve responsiveness/visual feedback on touch without re-triggering
+        // the toggle: keep the button from receiving the iOS tap highlight
+        // delay by acknowledging the touch but not toggling here.
+        btn.style.webkitTapHighlightColor = 'transparent';
         btn.setAttribute('aria-expanded', navCollapse.classList.contains('open') ? 'true' : 'false');
       });
 
-      // Close when clicking outside on small screens (ignore immediate clicks after toggle to avoid race)
-      document.addEventListener('click', function (e) {
+      // Close when interacting outside the nav on small screens.
+      function outsideHandler(e) {
         if (Date.now() - lastToggleAt < 350) return;
-        var clickedInside = navCollapse.contains(e.target) || btns.some(function(b){ return b.contains(e.target); });
+        if (!navCollapse.classList.contains('open')) return;
+        var target = e.target;
+        var clickedInside = navCollapse.contains(target) || btns.some(function (b) { return b.contains(target); });
         if (!clickedInside && window.getComputedStyle(btns[0]).display !== 'none') {
-          if (navCollapse.classList.contains('open')) {
-            closeNav();
-          }
+          closeNav();
         }
-      }, false);
+      }
+      document.addEventListener('click', outsideHandler, false);
     }
   }
 
