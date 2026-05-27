@@ -16,9 +16,11 @@
     logoSrc: './assets/images/movies/mashup-logo.svg',
     copyright: '© Ugur Kostak | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>',
     social: [
+      { icon: 'fa-linkedin', href: 'https://de.linkedin.com/in/ugur-kostak-944993a1', title: 'LinkedIn' },
       { icon: 'fa-instagram', href: 'https://www.instagram.com/pian_pianino', title: 'Instagram' },
       { icon: 'fa-github', href: 'https://github.com/ugurkostak', title: 'GitHub' },
-      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: 'X / Twitter' }
+      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: 'X / Twitter' },
+      { icon: 'fa-soundcloud', href: 'https://soundcloud.com/ugur-kostak', title: 'SoundCloud' }
     ]
   };
 
