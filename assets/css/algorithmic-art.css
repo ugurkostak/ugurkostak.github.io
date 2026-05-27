@@ -122,6 +122,22 @@ canvas {
   background-color: #4caf50;
 }
 
+.legend-color.matte {
+  background: #ff6360;
+}
+
+.description-text p {
+  margin-top: 12px;
+}
+
+.description-text p:first-of-type {
+  margin-top: 0;
+}
+
+.info-content-interaction {
+  margin-top: 12px;
+}
+
 .info-box {
   background: #f9f9f9;
   padding: 16px;
