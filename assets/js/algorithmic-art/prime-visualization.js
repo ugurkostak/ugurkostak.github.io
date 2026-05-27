@@ -118,7 +118,7 @@
         }
       });
 
-      // Show info
+      // Show info — keep the panel visible at all times with a placeholder
       const infoEl = document.getElementById('primeInfo');
       if (infoEl && hoveredNum) {
         infoEl.innerHTML = `
@@ -126,16 +126,15 @@
           <strong>Type:</strong> ${hoveredNum.isPrime ? '<span style="color: #ff6360;">Prime</span>' : '<span style="color: #999;">Composite</span>'}<br>
           <strong>Position:</strong> (${hoveredNum.x}, ${hoveredNum.y})
         `;
-        infoEl.style.display = 'block';
       } else if (infoEl) {
-        infoEl.style.display = 'none';
+        infoEl.innerHTML = '<span class="info-placeholder">Hover the grid to inspect a number.</span>';
       }
     });
 
     canvas.addEventListener('mouseleave', () => {
       const infoEl = document.getElementById('primeInfo');
       if (infoEl) {
-        infoEl.style.display = 'none';
+        infoEl.innerHTML = '<span class="info-placeholder">Hover the grid to inspect a number.</span>';
       }
     });
   }

@@ -42,60 +42,33 @@
 
 <main id="main-collapse">
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="viz-stage">
+  <section class="viz-page">
+    <header class="viz-header">
+      <h1>Beauty of Prime Numbers</h1>
+      <p class="viz-subtitle">Ulam Spiral Visualization</p>
+      <p class="viz-intro">Discover the mesmerizing patterns hidden in prime numbers. The Ulam Spiral arranges numbers in a spiral pattern, revealing unexpected distributions and structures in primes.</p>
+    </header>
 
-        <header class="viz-header">
-          <h1>Beauty of Prime Numbers</h1>
-          <p class="viz-subtitle">Ulam Spiral Visualization</p>
-          <p class="viz-intro">
-            Discover the mesmerizing patterns hidden in prime numbers. The Ulam Spiral arranges numbers in a spiral pattern, revealing unexpected distributions and structures in primes.
-          </p>
-        </header>
+    <canvas id="primeCanvas" class="viz-canvas-el" aria-label="Ulam Spiral visualization showing prime numbers" aria-describedby="primeDescription"></canvas>
 
-        <div class="viz-layout">
-          <div class="canvas-container">
-            <canvas id="primeCanvas" aria-label="Ulam Spiral visualization showing prime numbers" aria-describedby="primeDescription"></canvas>
-          </div>
+    <aside class="info-panel" aria-labelledby="primeAboutHeading">
+      <h2 id="primeAboutHeading">About This Visualization</h2>
 
-          <div class="info-panel">
-            <h2>About This Visualization</h2>
+      <ul class="legend">
+        <li><span class="legend-color prime"></span>Prime Numbers</li>
+        <li><span class="legend-color composite"></span>Composite Numbers</li>
+        <li><span class="legend-color one"></span>The Number 1</li>
+      </ul>
 
-            <div class="legend">
-              <div class="legend-item">
-                <div class="legend-color prime"></div>
-                <span>Prime Numbers</span>
-              </div>
-              <div class="legend-item">
-                <div class="legend-color composite"></div>
-                <span>Composite Numbers</span>
-              </div>
-              <div class="legend-item">
-                <div class="legend-color one"></div>
-                <span>The Number 1</span>
-              </div>
-            </div>
-
-            <div id="primeInfo" class="info-box" role="status" aria-live="polite"></div>
-
-            <div class="description-text" id="primeDescription">
-              <strong>Hover over the grid</strong> to explore individual numbers and see whether they are prime or composite.
-
-              <p>
-                The <strong>Ulam Spiral</strong> is a simple but striking pattern discovered by mathematician Stanislaw Ulam. When natural numbers are arranged in a spiral and primes are highlighted, surprising diagonal and linear patterns emerge—suggesting deep mathematical structure underlying the distribution of primes.
-              </p>
-
-              <p>
-                This visualization displays the first 10,000 numbers arranged in a spiral pattern, with prime numbers highlighted in red.
-              </p>
-            </div>
-          </div>
-        </div>
-
+      <div id="primeInfo" class="info-box" role="status" aria-live="polite">
+        <span class="info-placeholder">Hover the grid to inspect a number.</span>
       </div>
-    </div>
-  </div>
+
+      <p id="primeDescription">The <strong>Ulam Spiral</strong> is a simple but striking pattern discovered by mathematician Stanislaw Ulam. When natural numbers are arranged in a spiral and primes are highlighted, surprising diagonal and linear patterns emerge—suggesting deep mathematical structure underlying the distribution of primes.</p>
+
+      <p>This visualization displays the first 10,000 numbers arranged in a spiral pattern, with prime numbers highlighted in red.</p>
+    </aside>
+  </section>
 
 </main>
 

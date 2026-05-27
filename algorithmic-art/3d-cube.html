@@ -42,46 +42,28 @@
 
 <main id="main-collapse">
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="viz-stage">
+  <section class="viz-page">
+    <header class="viz-header">
+      <h1>3D Cube Visualization</h1>
+      <p class="viz-subtitle">Interactive algorithmic art — 3D cube</p>
+      <p class="viz-intro">Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
+    </header>
 
-        <header class="viz-header">
-          <h1>3D Cube Visualization</h1>
-          <p class="viz-subtitle">Interactive algorithmic art — 3D cube</p>
-          <p class="viz-intro">Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
-        </header>
+    <canvas id="cubeCanvas" class="viz-canvas-el" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
 
-        <div class="viz-layout">
-          <div class="canvas-container">
-            <canvas id="cubeCanvas" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
-          </div>
+    <aside class="info-panel" aria-labelledby="cubeAboutHeading">
+      <h2 id="cubeAboutHeading">About This Visualization</h2>
 
-          <div class="info-panel">
-            <h2>About This Visualization</h2>
+      <ul class="legend">
+        <li><span class="legend-color cube"></span>Interactive 3D Cube</li>
+        <li><span class="legend-color matte"></span>MeshNormal shading</li>
+      </ul>
 
-            <div class="legend">
-              <div class="legend-item">
-                <div class="legend-color cube"></div>
-                <span>Interactive 3D Cube</span>
-              </div>
-              <div class="legend-item">
-                <div class="legend-color matte"></div>
-                <span>MeshNormal shading</span>
-              </div>
-            </div>
+      <p id="cubeDescription">Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
 
-            <div class="description-text" id="cubeDescription">
-              <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
-
-              <p class="info-content-interaction"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+      <p><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+    </aside>
+  </section>
 
 </main>
 

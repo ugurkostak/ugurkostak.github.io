@@ -1,201 +1,150 @@
 /* 
- * Algorithmic Art Pages - Visualization-Only Styles
+ * Algorithmic Art Pages - Visualization Styles
  *
- * Restores the original dark-theme visualization aesthetic from the
- * first Ulam Spiral page: dark cards on a dark canvas, coral red title
- * and accents. Sits inside the standard sidebar layout.
+ * Light theme, left-aligned. Two-column grid: canvas on the left,
+ * fixed-width info panel on the right. The info box (hover readout)
+ * has a reserved height so layout doesn't jump.
  */
 
-/* ============================================================================
-   DARK VISUALIZATION STAGE
-   The whole viz area sits on a dark backdrop with centered intro header.
-   ============================================================================ */
-
-.viz-stage {
-  background: #111;
-  color: #fff;
-  border-radius: 10px;
-  padding: 48px 32px;
-  margin-top: 12px;
+.viz-page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-areas:
+    "header header"
+    "canvas info";
+  column-gap: 32px;
+  row-gap: 24px;
+  align-items: start;
+  max-width: 1100px;
 }
 
 .viz-header {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 40px;
+  grid-area: header;
+  text-align: left;
 }
 
 .viz-header h1 {
-  font-size: 2.4em;
-  color: #ff6360;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 
 .viz-header .viz-subtitle {
-  font-size: 1.05em;
-  color: #999;
-  margin-bottom: 18px;
+  color: #888;
+  font-size: 14px;
+  margin: 0 0 12px;
 }
 
 .viz-header .viz-intro {
-  font-size: 0.95em;
-  color: #ccc;
+  color: #555;
   line-height: 1.6;
   margin: 0;
+  max-width: 760px;
 }
 
-/* ============================================================================
-   LAYOUT - canvas + info-panel side-by-side
-   ============================================================================ */
-
-.viz-layout {
-  display: flex;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.canvas-container {
-  flex: 1 1 480px;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #1a1a1a;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-#cubeCanvas,
-#primeCanvas {
+/* Canvas: square, scales with column width */
+.viz-canvas-el {
+  grid-area: canvas;
   display: block;
-  border-radius: 4px;
   width: 100%;
   max-width: 560px;
   aspect-ratio: 1 / 1;
   height: auto;
+  border-radius: 4px;
+  background: #fafafa;
+  border: 1px solid #eee;
 }
 
+/* Info panel: fixed width, fixed-ish height, no card-in-card */
 .info-panel {
-  flex: 0 0 300px;
-  background: #1a1a1a;
-  padding: 24px;
-  border-radius: 8px;
-  border-left: 4px solid #ff6360;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  grid-area: info;
+  align-self: start;
+  width: 300px;
+  padding: 20px 22px;
+  border-left: 3px solid #ff6360;
+  background: transparent;
 }
 
 .info-panel h2 {
-  font-size: 1.3em;
-  color: #ff6360;
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.info-panel p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.info-panel p:last-child {
+  margin-bottom: 0;
+}
+
+/* Legend as a clean list */
+.legend {
+  list-style: none;
+  padding: 0;
   margin: 0 0 16px;
 }
 
-/* ============================================================================
-   LEGEND
-   ============================================================================ */
-
-.legend {
-  margin-bottom: 24px;
-}
-
-.legend-item {
+.legend li {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  font-size: 0.95em;
-  color: #ddd;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .legend-color {
-  width: 18px;
-  height: 18px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
   border-radius: 2px;
-  margin-right: 12px;
+  margin-right: 10px;
   flex-shrink: 0;
 }
 
 .legend-color.prime     { background-color: #ff6360; }
-.legend-color.composite { background-color: #333;    }
+.legend-color.composite { background-color: #d0d0d0; }
 .legend-color.one       { background-color: #4caf50; }
 .legend-color.cube      { background-color: #4caf50; }
 .legend-color.matte     { background-color: #ff6360; }
 
-/* ============================================================================
-   INFO BOX & DESCRIPTION
-   ============================================================================ */
-
+/* Always-visible hover readout with reserved height */
 .info-box {
-  background: #222;
-  padding: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+  background: #f5f5f5;
   border-radius: 4px;
-  font-size: 0.9em;
-  line-height: 1.6;
-  margin-bottom: 16px;
-  color: #ccc;
-  min-height: 36px;
+  padding: 10px 12px;
+  min-height: 78px;
+  margin-bottom: 14px;
 }
 
-.description-text {
-  font-size: 0.9em;
-  color: #aaa;
-  line-height: 1.6;
+.info-box .info-placeholder {
+  color: #999;
+  font-style: italic;
 }
 
-.description-text p {
-  margin-top: 12px;
-  margin-bottom: 0;
-}
-
-.info-content-interaction {
-  margin-top: 12px;
-  color: #aaa;
-}
-
-.description-text strong {
-  color: #ddd;
-}
-
-/* ============================================================================
-   RESPONSIVE
-   ============================================================================ */
-
+/* Responsive: stack on tablet/mobile */
 @media (max-width: 900px) {
-  .viz-stage {
-    padding: 32px 20px;
+  .viz-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "canvas"
+      "info";
   }
 
-  .viz-layout {
-    gap: 20px;
-  }
-
-  .viz-header h1 {
-    font-size: 1.8em;
-  }
-
-  .canvas-container,
   .info-panel {
-    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .viz-canvas-el {
+    max-width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .viz-stage {
-    padding: 24px 14px;
-  }
-
-  .viz-header h1 {
-    font-size: 1.5em;
-  }
-
-  .viz-header {
-    margin-bottom: 24px;
-  }
-}
 
 
 
