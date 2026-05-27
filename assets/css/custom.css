@@ -735,3 +735,36 @@ blockquote p {
     font-size: 14px;
   }
 }
+
+/* Mobile sidebar toggle — enlarge tap target for reliable touch on iOS Safari.
+   Bootstrap 3 defaults give a ~42x32 hit area which is below the iOS HIG 44x44
+   minimum and easy to miss. We enforce a generous touch target, clearer icon
+   bars, and visible active-state feedback. */
+.navbar-default .navbar-toggle,
+.navbar .navbar-toggle {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+}
+
+.navbar-default .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle[aria-expanded="true"] {
+  background-color: rgba(0, 0, 0, 0.06);
+}
