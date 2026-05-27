@@ -44,40 +44,42 @@
 
   <div class="row">
     <div class="col-xs-12">
+      <div class="viz-stage">
 
-      <div class="section-container-spacer viz-header">
-        <h1>3D Cube Visualization</h1>
-        <p class="published-date">Interactive algorithmic art — 3D cube</p>
-        <p>Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
-      </div>
+        <header class="viz-header">
+          <h1>3D Cube Visualization</h1>
+          <p class="viz-subtitle">Interactive algorithmic art — 3D cube</p>
+          <p class="viz-intro">Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
+        </header>
 
-      <div class="section-container-spacer viz-layout">
-        <div class="canvas-container">
-          <canvas id="cubeCanvas" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
-        </div>
-
-        <div class="info-panel">
-          <h2>About This Visualization</h2>
-
-          <div class="legend">
-            <div class="legend-item">
-              <div class="legend-color cube"></div>
-              <span>Interactive 3D Cube</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-color matte"></div>
-              <span>MeshNormal shading</span>
-            </div>
+        <div class="viz-layout">
+          <div class="canvas-container">
+            <canvas id="cubeCanvas" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
           </div>
 
-          <div class="description-text" id="cubeDescription">
-            <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
+          <div class="info-panel">
+            <h2>About This Visualization</h2>
 
-            <p class="info-content-interaction"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+            <div class="legend">
+              <div class="legend-item">
+                <div class="legend-color cube"></div>
+                <span>Interactive 3D Cube</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color matte"></div>
+                <span>MeshNormal shading</span>
+              </div>
+            </div>
+
+            <div class="description-text" id="cubeDescription">
+              <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
+
+              <p class="info-content-interaction"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 

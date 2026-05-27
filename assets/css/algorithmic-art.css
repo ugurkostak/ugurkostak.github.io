@@ -1,40 +1,58 @@
 /* 
  * Algorithmic Art Pages - Visualization-Only Styles
  *
- * Mirrors the standalone layout used yesterday: centered header,
- * canvas card + info-panel card side-by-side with a gap.
- * Adapted to the current light theme and shared sidebar layout.
+ * Restores the original dark-theme visualization aesthetic from the
+ * first Ulam Spiral page: dark cards on a dark canvas, coral red title
+ * and accents. Sits inside the standard sidebar layout.
  */
 
 /* ============================================================================
-   HEADER (centered intro above the visualization)
+   DARK VISUALIZATION STAGE
+   The whole viz area sits on a dark backdrop with centered intro header.
    ============================================================================ */
+
+.viz-stage {
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  padding: 48px 32px;
+  margin-top: 12px;
+}
 
 .viz-header {
   text-align: center;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 640px;
+  margin: 0 auto 40px;
 }
 
 .viz-header h1 {
-  margin-bottom: 10px;
+  font-size: 2.4em;
+  color: #ff6360;
+  margin: 0 0 10px;
 }
 
-.viz-header .published-date {
-  margin-bottom: 14px;
+.viz-header .viz-subtitle {
+  font-size: 1.05em;
+  color: #999;
+  margin-bottom: 18px;
+}
+
+.viz-header .viz-intro {
+  font-size: 0.95em;
+  color: #ccc;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ============================================================================
-   LAYOUT - canvas + info side-by-side with gap
+   LAYOUT - canvas + info-panel side-by-side
    ============================================================================ */
 
 .viz-layout {
   display: flex;
-  gap: 36px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
@@ -46,10 +64,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #1a1a1a;
   border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #cubeCanvas,
@@ -57,24 +75,24 @@
   display: block;
   border-radius: 4px;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   aspect-ratio: 1 / 1;
   height: auto;
 }
 
 .info-panel {
   flex: 0 0 300px;
-  background: #fff;
+  background: #1a1a1a;
   padding: 24px;
   border-radius: 8px;
   border-left: 4px solid #ff6360;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .info-panel h2 {
-  margin-top: 0;
-  margin-bottom: 18px;
-  font-size: 20px;
+  font-size: 1.3em;
+  color: #ff6360;
+  margin: 0 0 16px;
 }
 
 /* ============================================================================
@@ -82,15 +100,15 @@
    ============================================================================ */
 
 .legend {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #666;
+  margin-bottom: 12px;
+  font-size: 0.95em;
+  color: #ddd;
 }
 
 .legend-color {
@@ -102,53 +120,61 @@
 }
 
 .legend-color.prime     { background-color: #ff6360; }
-.legend-color.composite { background-color: #e0e0e0; }
+.legend-color.composite { background-color: #333;    }
 .legend-color.one       { background-color: #4caf50; }
-.legend-color.cube      { background: #4caf50; }
-.legend-color.matte     { background: #ff6360; }
+.legend-color.cube      { background-color: #4caf50; }
+.legend-color.matte     { background-color: #ff6360; }
 
 /* ============================================================================
    INFO BOX & DESCRIPTION
    ============================================================================ */
 
 .info-box {
-  background: #f9f9f9;
+  background: #222;
   padding: 14px;
   border-radius: 4px;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 0.9em;
+  line-height: 1.6;
   margin-bottom: 16px;
-  border: 1px solid #e0e0e0;
-  color: #666;
-  min-height: 40px;
+  color: #ccc;
+  min-height: 36px;
 }
 
 .description-text {
-  font-size: 14px;
-  color: #666;
+  font-size: 0.9em;
+  color: #aaa;
   line-height: 1.6;
 }
 
 .description-text p {
-  margin-bottom: 10px;
-}
-
-.description-text p:last-child {
+  margin-top: 12px;
   margin-bottom: 0;
 }
 
 .info-content-interaction {
-  margin-top: 10px;
-  color: #666;
+  margin-top: 12px;
+  color: #aaa;
+}
+
+.description-text strong {
+  color: #ddd;
 }
 
 /* ============================================================================
-   RESPONSIVE - stack canvas above info on tablet/mobile
+   RESPONSIVE
    ============================================================================ */
 
 @media (max-width: 900px) {
+  .viz-stage {
+    padding: 32px 20px;
+  }
+
   .viz-layout {
     gap: 20px;
+  }
+
+  .viz-header h1 {
+    font-size: 1.8em;
   }
 
   .canvas-container,
@@ -158,14 +184,19 @@
 }
 
 @media (max-width: 600px) {
-  .canvas-container {
-    padding: 16px;
+  .viz-stage {
+    padding: 24px 14px;
   }
 
-  .info-panel {
-    padding: 18px;
+  .viz-header h1 {
+    font-size: 1.5em;
+  }
+
+  .viz-header {
+    margin-bottom: 24px;
   }
 }
+
 
 
 
