@@ -33,7 +33,7 @@
 
 <main>
   <div class="canvas-container">
-    <canvas id="primeCanvas"></canvas>
+    <canvas id="primeCanvas" aria-label="Ulam Spiral visualization showing prime numbers" aria-describedby="primeDescription"></canvas>
   </div>
 
   <div class="info-panel">
@@ -54,9 +54,9 @@
       </div>
     </div>
 
-    <div id="primeInfo" class="info-box"></div>
+    <div id="primeInfo" class="info-box" role="status" aria-live="polite"></div>
 
-    <div class="description-text">
+    <div class="description-text" id="primeDescription">
       <strong>Hover over the grid</strong> to explore individual numbers and see whether they are prime or composite.
       
       <p>
