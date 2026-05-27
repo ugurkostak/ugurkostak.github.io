@@ -23,7 +23,7 @@
 .blog-scrollbar-date {
   font-size: 12px;
   font-weight: 700;
-  color: #ff6360;
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-align: center;
@@ -37,7 +37,7 @@
 .blog-scrollbar-track {
   width: 3px;
   height: 200px;
-  background: #e8e8e8;
+  background: var(--border-color);
   border-radius: 2px;
   position: relative;
   overflow: hidden;
@@ -46,10 +46,10 @@
 .blog-scrollbar-progress {
   width: 100%;
   height: 0%;
-  background: linear-gradient(180deg, #ff6360 0%, #ff8680 100%);
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-light) 100%);
   border-radius: 2px;
   transition: height 0.1s ease;
-  box-shadow: 0 0 8px rgba(255, 99, 96, 0.4);
+  box-shadow: 0 0 8px var(--shadow-primary);
 }
 
 /* Right-side timeline separator */
@@ -64,13 +64,13 @@
   position: relative;
   z-index: 10;
   padding: 24px 24px 18px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--surface);
+  border: 1px solid var(--border-color);
   border-radius: 22px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 80px var(--shadow-soft);
 }
 
 .blog-right-timeline .timeline-date {
@@ -78,7 +78,7 @@
   align-items: baseline;
   gap: 14px;
   font-size: 14px;
-  color: #333;
+  color: var(--dark-text);
   letter-spacing: 0.24em;
   font-weight: 700;
   text-transform: uppercase;
@@ -90,7 +90,7 @@
 }
 
 .blog-right-timeline .timeline-month {
-  color: #ff6360;
+  color: var(--primary-color);
   font-size: 16px;
 }
 
@@ -132,7 +132,7 @@
   height: 280px;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--surface-muted) 0%, var(--surface-subtle) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +149,7 @@
 .blog-feed-item-overlay {
   opacity: 0;
   transition: all 0.3s linear;
-  background: hsla(0,0%,100%,.5);
+  background: var(--surface-overlay);
   position: absolute;
   width: 90%;
   top: 0;
@@ -186,14 +186,14 @@
 .blog-feed-item-overlay h3 {
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: var(--overlay-text);
   margin: 0 0 8px 0;
   text-align: center;
 }
 
 .blog-feed-item-overlay-date-text {
   font-size: 13px;
-  color: #ff6360;
+  color: var(--primary-color);
   margin: 0 0 12px 0;
   text-align: center;
   font-weight: 600;
@@ -201,7 +201,7 @@
 
 .blog-feed-item-overlay p {
   font-size: 14px;
-  color: #ff6360;
+  color: var(--primary-color);
   margin: 0;
   text-align: center;
   font-weight: 600;
@@ -228,14 +228,14 @@
 .blog-feed-item-title {
   font-size: 22px;
   font-weight: 700;
-  color: #333;
+  color: var(--dark-text);
   margin: 0 0 12px 0;
   line-height: 1.4;
 }
 
 .blog-feed-item-summary {
   font-size: 15px;
-  color: #666;
+  color: var(--medium-text);
   line-height: 1.8;
   margin: 0;
 }
@@ -249,7 +249,7 @@
   bottom: 0;
   opacity: 0;
   transition: opacity 0.3s linear;
-  background: hsla(0,0%,100%,.5);
+  background: var(--surface-overlay);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -293,7 +293,7 @@
 .project-text-inner h3 {
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: var(--overlay-text);
   margin: 0 0 8px 0;
 }
 
@@ -304,12 +304,12 @@
 }
 
 .project-text-inner p:first-of-type {
-  color: #ff6360;
+  color: var(--primary-color);
 }
 
 .project-date {
   font-size: 13px;
-  color: #ff6360;
+  color: var(--primary-color);
   margin: 0;
   font-weight: 600;
 }
@@ -426,6 +426,5 @@
     display: none;
   }
 }
-
 
 

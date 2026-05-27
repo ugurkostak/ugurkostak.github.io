@@ -22,6 +22,135 @@
     ]
   };
 
+  var THEME_STORAGE_KEY = 'site-theme';
+
+  function isValidTheme(theme) {
+    return theme === 'light' || theme === 'dark';
+  }
+
+  function getSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+
+    return 'light';
+  }
+
+  function getStoredTheme() {
+    try {
+      var storedTheme = window.localStorage && window.localStorage.getItem(THEME_STORAGE_KEY);
+      return isValidTheme(storedTheme) ? storedTheme : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function setStoredTheme(theme) {
+    try {
+      if (window.localStorage) {
+        window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+      }
+    } catch (err) {
+      return;
+    }
+  }
+
+  function getInitialTheme() {
+    return getStoredTheme() || getSystemTheme();
+  }
+
+  function getActiveTheme() {
+    var activeTheme = document.documentElement.getAttribute('data-theme');
+    return isValidTheme(activeTheme) ? activeTheme : getInitialTheme();
+  }
+
+  function getThemeLabel(theme) {
+    return theme === 'dark' ? 'Dark theme' : 'Light theme';
+  }
+
+  function getNextTheme(theme) {
+    return theme === 'dark' ? 'light' : 'dark';
+  }
+
+  function updateThemeToggle(theme) {
+    var toggles = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
+    var nextTheme = getNextTheme(theme);
+
+    toggles.forEach(function (toggle) {
+      var label = toggle.querySelector('[data-theme-toggle-label]');
+      var icon = toggle.querySelector('[data-theme-toggle-icon]');
+      var actionLabel = 'Switch to ' + getThemeLabel(nextTheme).toLowerCase();
+
+      toggle.setAttribute('aria-label', getThemeLabel(theme) + ' active. ' + actionLabel + '.');
+      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      toggle.title = actionLabel;
+
+      if (label) {
+        label.textContent = getThemeLabel(theme);
+      }
+
+      if (icon) {
+        icon.className = 'fa ' + (theme === 'dark' ? 'fa-moon-o' : 'fa-sun-o');
+      }
+    });
+  }
+
+  function applyTheme(theme) {
+    var normalizedTheme = isValidTheme(theme) ? theme : getSystemTheme();
+    document.documentElement.setAttribute('data-theme', normalizedTheme);
+    updateThemeToggle(normalizedTheme);
+  }
+
+  function toggleTheme() {
+    var nextTheme = getNextTheme(getActiveTheme());
+    applyTheme(nextTheme);
+    setStoredTheme(nextTheme);
+  }
+
+  function createThemeToggle() {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-toggle';
+    button.setAttribute('data-theme-toggle', '');
+    button.addEventListener('click', toggleTheme, false);
+
+    var iconWrap = document.createElement('span');
+    iconWrap.className = 'theme-toggle-icon';
+    iconWrap.setAttribute('aria-hidden', 'true');
+
+    var icon = document.createElement('i');
+    icon.setAttribute('data-theme-toggle-icon', '');
+    iconWrap.appendChild(icon);
+
+    var label = document.createElement('span');
+    label.setAttribute('data-theme-toggle-label', '');
+
+    button.appendChild(iconWrap);
+    button.appendChild(label);
+
+    return button;
+  }
+
+  function setupSystemThemeListener() {
+    if (!window.matchMedia) return;
+
+    var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    var listener = function () {
+      if (!getStoredTheme()) {
+        applyTheme(getSystemTheme());
+      }
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', listener);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(listener);
+    }
+  }
+
+  applyTheme(getInitialTheme());
+  setupSystemThemeListener();
+
   /**
    * Calculates the relative path prefix for the current page
    * @returns {string} prefix - either './' for root pages or '../' repeated for nested pages
@@ -128,6 +257,11 @@
 
     navCollapseRoot.appendChild(navList);
 
+    var themeToggleWrapper = document.createElement('div');
+    themeToggleWrapper.className = 'theme-toggle-wrapper';
+    themeToggleWrapper.appendChild(createThemeToggle());
+    navCollapseRoot.appendChild(themeToggleWrapper);
+
     // Create and append nav footer
     var navFooter = document.createElement('nav');
     navFooter.className = 'nav-footer';
@@ -155,6 +289,7 @@
     navFooter.appendChild(copyrightPara);
 
     navCollapseRoot.appendChild(navFooter);
+    updateThemeToggle(getActiveTheme());
   }
 
   // Initialize sidebar on DOM ready or immediately if already loaded
