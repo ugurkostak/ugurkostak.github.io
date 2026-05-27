@@ -1,99 +1,17 @@
 /* 
- * Algorithmic Art Pages - Unified Styling
- * 
- * This file provides consistent styling for all algorithmic art visualization pages.
- * Used by: 3d-cube.html, ulam-spiral.html, and future visualization pages
- * 
- * Design Principles:
- * - Light theme (#f5f5f5) aligned with site-wide standards
- * - Consistent typography and spacing across all pages
- * - Responsive layout for mobile, tablet, and desktop
- * - WCAG AA color contrast compliance
- * - Clean separation of concerns (layout, typography, colors)
- * 
- * Sections:
- * 1. Reset & Base Styles
- * 2. Typography (headings, text)
- * 3. Layout (header and main container)
- * 4. Canvas Container (visualization area)
- * 5. Info Panel & Legend (sidebar content)
- * 6. Responsive Design (media queries)
+ * Algorithmic Art Pages - Visualization-Only Styles
+ *
+ * Contains ONLY styles specific to the canvas visualizations and info panels.
+ * Global layout, typography, and heading styles come from main.css and custom.css.
+ * Do NOT add body/main/h1/h2 global overrides here — they conflict with Bootstrap
+ * and the standard sidebar layout.
  */
 
 /* ============================================================================
-   1. RESET & BASE STYLES
-   ============================================================================ */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #f5f5f5;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  padding: 20px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ============================================================================
-   2. TYPOGRAPHY
-   ============================================================================ */
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
-  max-width: 700px;
-}
-
-h1 {
-  font-size: 2.3em;
-  margin-bottom: 10px;
-  color: #ff6360;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1.1em;
-  color: #999;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.description {
-  font-size: 0.95em;
-  color: #666;
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-
-/* ============================================================================
-   3. LAYOUT - Header & Main Container
-   ============================================================================ */
-
-main {
-  display: flex;
-  gap: 36px;
-  max-width: 1200px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* ============================================================================
-   4. CANVAS CONTAINER
+   CANVAS CONTAINER
    ============================================================================ */
 
 .canvas-container {
-  flex: 1;
-  min-width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,6 +19,7 @@ main {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 canvas {
@@ -112,24 +31,8 @@ canvas {
 }
 
 /* ============================================================================
-   5. INFO PANEL & LEGEND
+   LEGEND
    ============================================================================ */
-
-.info-panel {
-  flex: 0 0 300px;
-  background: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  border-left: 4px solid #ff6360;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.info-panel h2 {
-  font-size: 1.3em;
-  margin-bottom: 16px;
-  color: #ff6360;
-  font-weight: 700;
-}
 
 .legend {
   margin-bottom: 24px;
@@ -151,28 +54,16 @@ canvas {
   flex-shrink: 0;
 }
 
-/* Legend color variants for different visualization types */
-.legend-color.prime {
-  background-color: #ff6360;
-}
+.legend-color.prime    { background-color: #ff6360; }
+.legend-color.composite { background-color: #e0e0e0; }
+.legend-color.one      { background-color: #4caf50; }
+.legend-color.cube     { background: #4caf50; }
+.legend-color.matte    { background: #ff6360; }
 
-.legend-color.composite {
-  background-color: #e0e0e0;
-}
+/* ============================================================================
+   INFO BOX
+   ============================================================================ */
 
-.legend-color.cube {
-  background: #4caf50;
-}
-
-.legend-color.one {
-  background-color: #4caf50;
-}
-
-.legend-color.matte {
-  background: #ff6360;
-}
-
-/* Info box for displaying dynamic information */
 .info-box {
   background: #f9f9f9;
   padding: 16px;
@@ -184,7 +75,10 @@ canvas {
   color: #666;
 }
 
-/* Description text block with consistent spacing */
+/* ============================================================================
+   DESCRIPTION TEXT
+   ============================================================================ */
+
 .description-text {
   font-size: 0.95em;
   color: #666;
@@ -195,68 +89,26 @@ canvas {
   margin-bottom: 12px;
 }
 
-.description-text p:first-of-type {
-  margin-top: 0;
-}
-
 .description-text p:last-child {
   margin-bottom: 0;
 }
 
-/* Interaction hints and instructions */
 .info-content-interaction {
   margin-top: 12px;
   color: #666;
 }
 
 /* ============================================================================
-   6. RESPONSIVE DESIGN
+   RESPONSIVE
    ============================================================================ */
 
-/* Tablet layout (max-width: 900px) - canvas and info stack vertically */
-@media (max-width: 900px) {
-  main {
-    gap: 24px;
-  }
-
-  h1 {
-    font-size: 1.8em;
-  }
-
-  .info-panel {
-    flex-basis: 100%;
-    order: 2;
+@media (max-width: 600px) {
+  canvas {
+    height: 50vh;
   }
 
   .canvas-container {
-    flex-basis: 100%;
-    order: 1;
-  }
-}
-
-/* Mobile layout (max-width: 600px) - further optimize for smaller screens */
-@media (max-width: 600px) {
-  body {
     padding: 10px;
   }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  header {
-    margin-bottom: 20px;
-  }
-
-  .canvas-container {
-    min-width: 280px;
-  }
-
-  .info-panel {
-    padding: 16px;
-  }
-
-  .info-panel h2 {
-    font-size: 1.1em;
-  }
 }
+
