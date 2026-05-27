@@ -11,14 +11,14 @@
 
   // Site branding and metadata
   var siteConfig = {
-    brandText: 'About Photography and Cinema',
-    tagline: 'Here I will be writing mostly about my photographs and cinema I have seen.',
+    brandText: 'Photography, Cinema & Code',
+    tagline: 'Photographs I take, films I keep thinking about, and small technical or mathematical experiments.',
     logoSrc: './assets/images/movies/mashup-logo.svg',
     copyright: '© Ugur Kostak | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>',
     social: [
       { icon: 'fa-instagram', href: 'https://www.instagram.com/pian_pianino', title: 'Instagram' },
-      { icon: 'fa-dribbble', href: 'https://dribbble.com/', title: 'Dribbble' },
-      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: 'Twitter' }
+      { icon: 'fa-github', href: 'https://github.com/ugurkostak', title: 'GitHub' },
+      { icon: 'fa-twitter', href: 'https://twitter.com/salyangozhizi', title: 'X / Twitter' }
     ]
   };
 
