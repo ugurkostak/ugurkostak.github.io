@@ -138,7 +138,7 @@ The following changes have been documented in version 2026-05-26:
 2. **Asset Organization Refined**
    - Section-specific JavaScript modules in `assets/js/<section>/`
    - Vendor libraries in `assets/js/<section>/vendor/` (Three.js for algorithmic-art)
-   - Image folder `assets/images/math/` for visualizations
+   - Image folder `assets/images/algorithmic-art/` for visualizations
 
 3. **Mobile Sidebar Improvements**
    - Robust toggle handling with pointer/touch/click events

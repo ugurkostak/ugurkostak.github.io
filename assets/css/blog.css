@@ -145,6 +145,11 @@
   transition: all 0.3s ease;
 }
 
+.blog-feed-item-image--photography img {
+  transform: scale(1.32);
+  transform-origin: center;
+}
+
 /* Hover overlay for title and discover more */
 .blog-feed-item-overlay {
   opacity: 0;
@@ -426,5 +431,4 @@
     display: none;
   }
 }
-
 

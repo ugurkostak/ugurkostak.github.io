@@ -92,7 +92,7 @@ Different sections may use slightly different metadata structures while maintain
   "author": "Ugur Kostak",
   "category": "visualization",
   "tags": ["3d", "geometry", "interactive"],
-  "image": "./assets/images/math/3d-cube.jpg",
+  "image": "./assets/images/algorithmic-art/3d-cube.jpg",
   "content": "Description of interactive visualization",
   "featured": true
 }

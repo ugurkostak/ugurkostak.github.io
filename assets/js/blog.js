@@ -184,8 +184,8 @@
         const loremText = getLoremText(index);
 
         item.innerHTML = `
-          <div class="blog-feed-item-image">
-            <img src="${article.image}" alt="${article.title}">
+          <div class="blog-feed-item-image blog-feed-item-image--${page}">
+            ${article.image ? `<img src="${article.image}" alt="${article.title}">` : ''}
             <a href="./${page}/${article.slug}.html" class="blog-feed-item-overlay">
               <div class="project-text-holder">
                 <div class="project-text-inner">

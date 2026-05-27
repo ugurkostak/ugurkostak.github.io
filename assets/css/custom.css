@@ -251,6 +251,26 @@ a:hover, a:focus {
   }
 }
 
+.instagram-tile {
+  position: relative;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 80%;
+  overflow: hidden;
+  background: var(--surface-muted);
+}
+
+.instagram-tile iframe {
+  position: absolute;
+  top: -60px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 230px);
+  border: 0;
+  pointer-events: none;
+}
+
 .section-spacer {
   height: var(--spacing-xl);
 }
@@ -432,6 +452,16 @@ blockquote {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+.section-card img.section-card-contain {
+  object-fit: contain;
+  background: var(--bg-lighter);
+}
+
+.section-card img.section-card-crop {
+  transform: scale(1.32);
+  transform-origin: center;
 }
 
 .section-link {

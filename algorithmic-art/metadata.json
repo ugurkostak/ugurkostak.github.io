@@ -8,7 +8,7 @@
     "author": "Ugur Kostak",
     "category": "visualization",
     "tags": ["3d", "geometry", "interactive"],
-    "image": "./assets/images/math/3d-cube.jpg",
+    "image": "",
     "content": "Interactive 3D cube visualization",
     "featured": true
   },
@@ -21,7 +21,7 @@
     "author": "Ugur Kostak",
     "category": "mathematics",
     "tags": ["math", "primes", "patterns"],
-    "image": "./assets/images/math/prime-numbers.jpg",
+    "image": "",
     "content": "Placeholder article about the beauty of mathematics",
     "featured": true
   }
