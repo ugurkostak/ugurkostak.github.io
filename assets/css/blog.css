@@ -166,6 +166,19 @@
   color: inherit;
 }
 
+.blog-feed-item-overlay,
+.blog-feed-item-overlay:hover,
+.blog-feed-item-overlay:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-feed-item-overlay:hover h3,
+.blog-feed-item-overlay:hover p,
+.blog-feed-item-overlay:hover .blog-feed-item-overlay-date-text {
+  text-decoration: none;
+}
+
 .blog-feed-item:hover .blog-feed-item-overlay {
   opacity: 1;
 }
@@ -245,6 +258,18 @@
   color: inherit;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.project-description,
+.project-description:hover,
+.project-description:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-description:hover h3,
+.project-description:hover p {
+  text-decoration: none;
 }
 
 .grid-item:hover .project-description {
