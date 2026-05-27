@@ -21,7 +21,7 @@ function initCube() {
   // Resize helper
   function resize() {
     const width = canvas.clientWidth;
-    const height = Math.max(300, Math.floor(window.innerHeight * 0.55));
+    const height = Math.max(400, Math.floor(window.innerHeight * 0.70));
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
