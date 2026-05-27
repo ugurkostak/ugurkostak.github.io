@@ -4,6 +4,8 @@
 
 This repository is a static GitHub Pages personal website for Ugur Kostak. It presents photography, cinema writing, technology writing, algorithmic-art explorations, and soft-skills/professional-growth writing.
 
+Consulting and teaching are not part of the active content scope. Do not add, expand, promote, or create navigation for consulting/teaching content unless explicitly requested.
+
 The site should remain lightweight, maintainable, accessible, and easy to update without a build system.
 
 ## Tech Stack
@@ -137,6 +139,7 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 - Keep paths relative and compatible with GitHub Pages.
 - Do not remove existing content unless requested.
 - Treat soft-skills writing as reflective, practical content about communication, collaboration, feedback, mentoring, learning, teamwork, leadership, and career growth.
+- Do not treat consulting/teaching services as active site content unless the user explicitly opts them back in.
 
 ### HTML
 

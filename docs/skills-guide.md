@@ -43,6 +43,7 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 - Reordering navigation items
 - Removing deprecated links
 - Testing relative paths from root and nested pages
+- Keeping consulting/teaching out of navigation unless explicitly requested
 
 ---
 
@@ -128,11 +129,13 @@ python scripts/shape_images.py assets/images/photos/big assets/images/photos/sma
 - Keeps soft-skills content practical, reflective, and specific
 - Places soft-skills articles in `tech-blog/` by default
 - Recommends discovery tags such as `communication`, `feedback`, `collaboration`, `mentoring`, `career-growth`, `learning`, and `teamwork`
+- Prevents accidental consulting/teaching service copy unless explicitly requested
 
 **Example Use Cases:**
 - Drafting an article about feedback habits
 - Improving a mentoring or collaboration essay
 - Adding metadata for professional-growth writing
+- Checking that a soft-skills article is not framed as consulting or teaching
 
 ---
 
@@ -150,6 +153,7 @@ python scripts/shape_images.py assets/images/photos/big assets/images/photos/sma
 - Checks mobile responsiveness
 - Validates accessibility basics (heading hierarchy, alt text)
 - Ensures no duplicated markup
+- Confirms active content scope and no unintended consulting/teaching content
 
 **Example Use Cases:**
 - Before committing major changes
@@ -251,6 +255,7 @@ Many tasks require combining multiple skills:
 - **Do not introduce frameworks** unless a skill explicitly requires them.
 - **Preserve stable URLs** — avoid renaming published article slugs.
 - **Keep metadata consistent** — use the same field structure within each section.
+- **Keep consulting/teaching out of scope** — do not add service copy, metadata, or navigation unless explicitly requested.
 - **Validate before committing** — always run `static-site-review` before pushing.
 - **Keep it DRY** — if a task repeats, consider creating a new skill.
 

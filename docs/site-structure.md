@@ -93,6 +93,8 @@ Examples:
 - `tech-blog.html` — Technology blog collection
 - `contact.html` — Contact information; utility page, not a content section
 
+Consulting and teaching are not active content sections. Do not add or promote them in navigation, metadata, or content workflows unless explicitly requested.
+
 ## Section Folders
 
 Section folders contain individual article/detail pages and metadata.

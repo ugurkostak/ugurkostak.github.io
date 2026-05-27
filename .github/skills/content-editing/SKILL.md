@@ -1,6 +1,6 @@
 ---
 name: content-editing
-description: "Use when: improving article text, page copy, titles, summaries, metadata descriptions, UX copy, or soft-skills writing for the active site sections."
+description: "Use when: improving article text, page copy, titles, summaries, metadata descriptions, UX copy, or soft-skills writing for the active site sections. Excludes consulting/teaching service copy unless explicitly requested."
 ---
 
 # Skill: Content Editing
@@ -8,6 +8,8 @@ description: "Use when: improving article text, page copy, titles, summaries, me
 ## Use When
 
 Use this skill when improving article text, page copy, summaries, descriptions, titles, metadata text, or soft-skills/professional-growth writing.
+
+Consulting and teaching service copy is out of scope unless explicitly requested.
 
 ## Steps
 
@@ -36,6 +38,7 @@ Use this skill when improving article text, page copy, summaries, descriptions, 
 - Prefer concrete situations, examples, and tradeoffs over generic advice.
 - Cover topics such as communication, feedback, collaboration, mentoring, career growth, learning habits, teamwork, and leadership.
 - Avoid corporate jargon, motivational filler, and sales language.
+- Do not frame soft-skills writing as consulting, teaching, coaching, workshops, or services unless the user explicitly asks.
 
 ## Final Response
 
