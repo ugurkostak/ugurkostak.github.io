@@ -117,20 +117,41 @@
     const initialPoint = spiral.find(p => p.num === 2) || spiral[0];
     renderInfo(initialPoint);
 
-    // Hover info — updates on move, persists last value on leave
-    canvas.addEventListener('mousemove', (e) => {
+    // Resolve a pointer/mouse event to the spiral cell it overlaps.
+    // Important: canvas.width is the internal pixel size (640) but on mobile
+    // the canvas is rendered smaller via CSS. We must scale event coordinates
+    // by the actual displayed size, otherwise touches on mobile map far
+    // outside the spiral.
+    function pointFromEvent(e) {
       const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left - 20;
-      const y = e.clientY - rect.top - 20;
-
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX - 20;
+      const y = (e.clientY - rect.top) * scaleY - 20;
       const gridX = Math.floor(x / cellSize) - Math.floor(size / 2);
       const gridY = Math.floor(y / cellSize) - Math.floor(size / 2);
+      return spiral.find(point => point.x === gridX && point.y === gridY);
+    }
 
-      const hoveredNum = spiral.find(point => point.x === gridX && point.y === gridY);
-      if (hoveredNum) {
-        renderInfo(hoveredNum);
-      }
-    });
+    function handleMove(e) {
+      const point = pointFromEvent(e);
+      if (point) renderInfo(point);
+    }
+
+    // Use Pointer Events: a single API that covers mouse, touch, and stylus
+    // across modern browsers including iOS Safari 13+.
+    canvas.addEventListener('pointermove', handleMove);
+    canvas.addEventListener('pointerdown', handleMove);
+
+    // Block page scroll/zoom while the finger interacts with the spiral so
+    // tapping a cell doesn't drag the page. `touch-action: none` on the
+    // canvas (set in algorithmic-art.css) handles most cases; this is the
+    // fallback for older iOS Safari where touch-action on <canvas> is flaky.
+    canvas.addEventListener('touchmove', (e) => {
+      if (e.cancelable) e.preventDefault();
+      const touch = e.touches[0];
+      if (touch) handleMove(touch);
+    }, { passive: false });
   }
 
   // Initialize on load

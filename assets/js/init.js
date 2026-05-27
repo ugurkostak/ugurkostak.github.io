@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     masonryBuild();
   }
 
-  // Initialize navigation
-  if (typeof navbarToggleSidebar === 'function') {
-    navbarToggleSidebar();
-  }
+  // Note: navbarToggleSidebar() from the legacy template is intentionally
+  // NOT called here. The mobile sidebar toggle is fully handled by
+  // assets/js/sidebar.js; calling the legacy version binds a second click
+  // handler on `.navbar-toggle` that races with ours and breaks the toggle
+  // on pages that include this script (e.g. home, about).
 
   if (typeof navActivePage === 'function') {
     navActivePage();
