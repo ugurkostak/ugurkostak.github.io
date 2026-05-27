@@ -13,6 +13,8 @@
 
 The writing should feel personal, clear, thoughtful, and specific.
 
+Soft-skills/professional-growth writing should also feel practical, reflective, concrete, and non-salesy.
+
 Avoid:
 
 - generic marketing language
@@ -26,6 +28,7 @@ Prefer:
 - short summaries
 - useful titles
 - personal but concise explanations
+- specific examples and tradeoffs for soft-skills topics
 
 ## HTML Style
 
@@ -36,7 +39,7 @@ Prefer:
 
 ## Nested Detail Page Template
 
-All section detail pages (cinema, tech-blog, photography, algorithmic-art) share one layout, modeled on `cinema/tar.html`:
+All section detail pages (cinema, tech-blog, photography, algorithmic-art, and soft-skills articles placed in tech-blog) share one layout, modeled on `cinema/tar.html`:
 
 ```html
 <main id="main-collapse">
@@ -78,4 +81,5 @@ Notes:
 - Titles should be concise.
 - Summaries should work as card descriptions.
 - Tags should be consistent and reusable.
+- Soft-skills tags should be specific, such as `communication`, `feedback`, `collaboration`, `mentoring`, `career-growth`, `learning`, `teamwork`, or `leadership`.
 - Dates should use `YYYY-MM-DD`.

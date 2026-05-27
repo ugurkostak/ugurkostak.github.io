@@ -15,9 +15,10 @@ applyTo: "assets/**/*"
 
 - Movie images: `assets/images/movies/`
 - Tech images: `assets/images/tech/`
-- Consulting images: `assets/images/consulting/`
+- Math/algorithmic-art images: `assets/images/math/`
 - Photo originals: `assets/images/photos/big/`
 - Photo web versions: `assets/images/photos/small/`
+- Soft-skills article images should follow the existing tech-blog pattern in `assets/images/tech/` unless a dedicated section is explicitly requested.
 
 ## Styling Rules
 

@@ -12,8 +12,7 @@
 ├── cinema.html
 ├── photography.html
 ├── tech-blog.html
-├── consulting-teaching.html
-├── contact.html
+├── contact.html            # utility page, not a content section
 ├── assets/
 │   ├── css/
 │   ├── js/
@@ -28,7 +27,6 @@
 │   │   └── [other utilities]
 │   ├── fonts/
 │   └── images/
-│       ├── consulting/
 │       ├── movies/
 │       ├── photos/
 │       │   ├── big/
@@ -76,6 +74,7 @@
 │       ├── process-images/
 │       ├── content-editing/
 │       ├── static-site-review/
+│       ├── soft-skills-content/
 │       └── timeline-filter-skill/
 └── .gitignore
 ```
@@ -92,8 +91,7 @@ Examples:
 - `cinema.html` — Cinema writings collection
 - `photography.html` — Photography gallery
 - `tech-blog.html` — Technology blog collection
-- `consulting-teaching.html` — Consulting and teaching background
-- `contact.html` — Contact information
+- `contact.html` — Contact information; utility page, not a content section
 
 ## Section Folders
 
@@ -105,6 +103,8 @@ Current examples:
 - `cinema/` — Individual film reviews and articles
 - `tech-blog/` — Individual technology articles
 - `photography/` — Individual photo stories
+
+Soft-skills/professional-growth writing should use `tech-blog/` by default unless a dedicated section is explicitly requested.
 
 Filenames inside section folders must match the `slug` field in that section's `metadata.json` (e.g. slug `building-accessible-websites` → `tech-blog/building-accessible-websites.html`). `blog.js` builds detail links as `./<section>/<slug>.html`, so any mismatch produces a 404.
 
@@ -134,7 +134,6 @@ assets/
 │   └── [utilities]
 ├── fonts/                            # Web fonts
 ├── images/                           # Images organized by section
-│   ├── consulting/
 │   ├── movies/
 │   ├── math/
 │   ├── photos/
@@ -151,4 +150,5 @@ Guidelines:
 - Keep third-party libraries (vendor) in `assets/js/<section>/vendor/`.
 - Keep fonts in `assets/fonts/`.
 - Keep images in `assets/images/<section>/`.
+- Use `assets/images/tech/` for soft-skills article images unless a dedicated section is explicitly requested.
 - Keep CSS in `assets/css/` (can be section-specific or unified).

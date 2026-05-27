@@ -1,8 +1,14 @@
+---
+name: web-dev-agent
+description: "Use when: maintaining static website structure, navigation, reusable layout, metadata wiring, assets, accessibility, responsive behavior, blog collections, algorithmic-art visualizations, or soft-skills content pages."
+tools: [read, search, edit, execute]
+---
+
 # Web Development Agent
 
 ## Role
 
-The web development agent maintains the technical structure of the static website.
+The web development agent maintains the technical structure of the static website for active content areas: photography, cinema, tech-blog, algorithmic-art, and soft-skills/professional-growth writing.
 
 ## Responsibilities
 
@@ -15,6 +21,7 @@ The web development agent maintains the technical structure of the static websit
 - image workflow
 - metadata integration
 - accessibility and responsive checks
+- soft-skills content placement within the current static-site structure
 
 ## Preferred Approach
 
@@ -32,6 +39,7 @@ The web development agent maintains the technical structure of the static websit
 - `assets/js/sidebar.js` (mobile toggle, navigation, layout)
 - `assets/js/blog.js` (collection page rendering)
 - `assets/js/<section>/` (section-specific visualizations and behaviors)
+- `cinema/metadata.json`, `tech-blog/metadata.json`, `photography/metadata.json`, `algorithmic-art/metadata.json`
 - `assets/css/*`
 - `scripts/shape_images.py`
 - `docs/*.md`

@@ -10,7 +10,7 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 
 **Path:** `.github/skills/add-new-page/SKILL.md`
 
-**Use When:** Creating a new root page or section subpage.
+**Use When:** Creating a new root page or section subpage for photography, cinema, tech-blog, algorithmic-art, or soft-skills content.
 
 **What It Does:**
 - Creates HTML file with project page skeleton
@@ -20,8 +20,8 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 - Checks relative paths
 
 **Example Use Cases:**
-- Adding a new root page (e.g., `speaking.html`)
 - Adding an article to a section folder (e.g., `tech-blog/microservices.html`)
+- Adding a soft-skills article in `tech-blog/` (e.g., `tech-blog/communication-feedback.html`)
 - Creating a detail page linked from a metadata collection
 
 ---
@@ -50,7 +50,7 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 
 **Path:** `.github/skills/add-blog-item-metadata/SKILL.md`
 
-**Use When:** Adding a new cinema, tech-blog, algorithmic-art, or photo-blog article.
+**Use When:** Adding a new cinema, tech-blog, algorithmic-art, photography, or soft-skills article.
 
 **What It Does:**
 - Creates metadata.json entry
@@ -63,6 +63,7 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 - Adding a new cinema review with metadata
 - Publishing a new tech article
 - Adding a new algorithmic-art visualization
+- Publishing a soft-skills article through `tech-blog/metadata.json`
 - Updating featured/unfeatured status
 
 ---
@@ -86,6 +87,7 @@ Skills are repeatable, procedural workflows that automate and standardize recurr
 - Generating thumbnails for cinema article cards
 - Resizing header images for tech blog
 - Optimizing images for algorithmic-art visualizations
+- Preparing images for soft-skills articles using `assets/images/tech/`
 
 **Command:**
 ```bash
@@ -98,7 +100,7 @@ python scripts/shape_images.py assets/images/photos/big assets/images/photos/sma
 
 **Path:** `.github/skills/content-editing/SKILL.md`
 
-**Use When:** Updating article content, titles, summaries, tags, or metadata text.
+**Use When:** Updating article content, titles, summaries, tags, metadata text, or soft-skills writing.
 
 **What It Does:**
 - Edits page copy and content
@@ -112,10 +114,29 @@ python scripts/shape_images.py assets/images/photos/big assets/images/photos/sma
 - Updating tags and categories
 - Fixing typos and grammar
 - Improving SEO metadata
+- Improving practical, non-salesy soft-skills copy
 
 ---
 
-### 6. Static Site Review
+### 6. Soft Skills Content
+
+**Path:** `.github/skills/soft-skills-content/SKILL.md`
+
+**Use When:** Creating or improving soft-skills, communication, leadership, mentoring, collaboration, feedback, career-growth, learning, teamwork, or professional-development content.
+
+**What It Does:**
+- Keeps soft-skills content practical, reflective, and specific
+- Places soft-skills articles in `tech-blog/` by default
+- Recommends discovery tags such as `communication`, `feedback`, `collaboration`, `mentoring`, `career-growth`, `learning`, and `teamwork`
+
+**Example Use Cases:**
+- Drafting an article about feedback habits
+- Improving a mentoring or collaboration essay
+- Adding metadata for professional-growth writing
+
+---
+
+### 7. Static Site Review
 
 **Path:** `.github/skills/static-site-review/SKILL.md`
 
@@ -138,11 +159,11 @@ python scripts/shape_images.py assets/images/photos/big assets/images/photos/sma
 
 ---
 
-### 7. Interactive Timeline Filter (timeline-filter-skill)
+### 8. Interactive Timeline Filter (timeline-filter-skill)
 
 **Path:** `.github/skills/timeline-filter-skill/SKILL.md`
 
-**Use When:** Adding year-based filtering to collection pages like cinema, photography, or algorithmic-art.
+**Use When:** Adding year-based filtering to collection pages like cinema, photography, tech-blog, algorithmic-art, or a future explicitly requested soft-skills collection.
 
 **What It Does:**
 - Adds clickable year filter buttons
@@ -216,6 +237,13 @@ Many tasks require combining multiple skills:
   2. `update-navigation` (add to sidebar)
   3. `add-new-page` (create section page `algorithmic-art/3d-cube.html`)
   4. `add-blog-item-metadata` (add to `algorithmic-art/metadata.json`)
+  5. `static-site-review` (final validation)
+
+- **Adding a soft-skills article:**
+  1. `soft-skills-content` (shape the topic, tone, and placement)
+  2. `add-new-page` (create a `tech-blog/<slug>.html` page by default)
+  3. `add-blog-item-metadata` (add entry to `tech-blog/metadata.json`)
+  4. `content-editing` (polish copy and summary)
   5. `static-site-review` (final validation)
 
 ## Constraints and Best Practices

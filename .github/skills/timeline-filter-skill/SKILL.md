@@ -1,3 +1,8 @@
+---
+name: timeline-filter-skill
+description: "Use when: adding year-based filtering and timeline navigation to collection pages such as cinema, photography, tech-blog, algorithmic-art, or a future requested soft-skills collection."
+---
+
 # Interactive Timeline Filter Component Skill
 
 ## Overview

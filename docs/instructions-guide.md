@@ -74,13 +74,12 @@ Instructions are rules and guidelines that apply automatically to certain file t
 **Image Organization:**
 ```text
 assets/images/
-├── consulting/      # Consulting/teaching section
 ├── movies/          # Cinema section
 ├── math/            # Algorithmic art visualizations
 ├── photos/
 │   ├── big/         # Original high-resolution
 │   └── small/       # Web-optimized versions
-└── tech/            # Technology writing
+└── tech/            # Technology and soft-skills writing
 ```
 
 ---
@@ -116,7 +115,8 @@ assets/images/
 - **Cinema:** Includes film title, director, genre, review summary
 - **Tech Blog:** Includes topic, keywords, code examples metadata
 - **Algorithmic Art:** Includes category, tags (3d, geometry, interactive), visualization type
-- **Photo Blog:** Includes location, camera metadata, exposure info
+- **Photography:** Includes location, visual-story metadata, and optional camera/exposure details
+- **Soft Skills:** Use the tech-blog metadata model by default with tags such as communication, feedback, collaboration, mentoring, career-growth, learning, teamwork, or leadership
 
 ---
 

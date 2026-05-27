@@ -16,7 +16,6 @@ assets/images/
 │   └── small/       # generated web-sized photos
 ├── movies/          # cinema images
 ├── tech/            # technology images
-├── consulting/      # consulting/teaching images
 └── math/            # algorithmic art and visualization images
 ```
 
@@ -47,3 +46,4 @@ The script:
 - Use larger images only on detail pages.
 - Keep filenames URL-safe: lowercase, hyphens, no spaces.
 - Add alt text in HTML and metadata.
+- Use `assets/images/tech/` for soft-skills/professional-growth article images unless a dedicated soft-skills section is explicitly requested.

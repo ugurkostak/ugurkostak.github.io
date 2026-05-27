@@ -8,6 +8,7 @@ This document provides a quick map of all documentation for the ugurkostak.githu
 
 - **Adding a new page?** → Read `docs/site-structure.md` + use `.github/skills/add-new-page/SKILL.md`
 - **Adding a blog article?** → Use `.github/skills/add-blog-item-metadata/SKILL.md`
+- **Adding soft-skills content?** → Use `.github/skills/soft-skills-content/SKILL.md`
 - **Resizing images?** → Use `.github/skills/process-images/SKILL.md`
 - **Changing navigation?** → Use `.github/skills/update-navigation/SKILL.md`
 
@@ -22,6 +23,7 @@ This document provides a quick map of all documentation for the ugurkostak.githu
 ### For Content Editors
 
 - **Adding/updating article text?** → Use `.github/skills/content-editing/SKILL.md`
+- **Soft-skills tone and placement?** → Use `.github/skills/soft-skills-content/SKILL.md`
 - **Metadata structure and guidelines?** → Read `docs/metadata-model.md`
 - **Tags, categories, and featured items?** → Read `docs/metadata-model.md`
 
@@ -87,6 +89,7 @@ add-blog-item-metadata/           # Adding metadata entries
 process-images/                   # Resizing and optimizing images
 content-editing/                  # Updating article text and metadata
 static-site-review/               # Validation before deployment
+soft-skills-content/              # Soft-skills and professional-growth writing
 timeline-filter-skill/            # Adding year-based filtering to collections
 ```
 
@@ -101,14 +104,14 @@ timeline-filter-skill/            # Adding year-based filtering to collections
 - `cinema.html` — Film reviews collection
 - `photography.html` — Photo gallery
 - `tech-blog.html` — Technology writing
-- `consulting-teaching.html` — Background
 - `contact.html` — Contact
 
 ### Collection Sections
 - `algorithmic-art/` — 3D cube, prime visualization (NEW)
 - `cinema/` — Film reviews
 - `tech-blog/` — Articles
-- `photography/` — Future photo details
+- `photography/` — Photo stories
+- Soft-skills/professional-growth writing uses `tech-blog/` by default unless a dedicated section is explicitly requested
 
 ### Assets
 - `assets/js/sidebar.js` — Navigation and layout (mobile toggle, pointer/touch/click handling)
@@ -151,6 +154,10 @@ The following changes have been documented in version 2026-05-26:
    - Skills guide: `docs/skills-guide.md`
    - Instructions guide: `docs/instructions-guide.md`
    - This overview: `docs/documentation-overview.md`
+
+6. **Soft Skills Content Workflow Added**
+   - New skill: `.github/skills/soft-skills-content/SKILL.md`
+   - Soft-skills/professional-growth writing belongs in `tech-blog/` by default
 
 ---
 
@@ -243,6 +250,7 @@ The following changes have been documented in version 2026-05-26:
 | `.github/skills/process-images/SKILL.md` | Resize and optimize images |
 | `.github/skills/content-editing/SKILL.md` | Update article text and metadata content |
 | `.github/skills/static-site-review/SKILL.md` | Validate changes before deployment |
+| `.github/skills/soft-skills-content/SKILL.md` | Create or improve soft-skills/professional-growth content |
 | `.github/skills/timeline-filter-skill/SKILL.md` | Add year-based filtering to collections |
 
 ---
