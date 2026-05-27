@@ -14,6 +14,8 @@ The site should remain static and deployable by GitHub Pages without a build pip
 
 Navigation, sidebar header, mobile bar, and footer should be generated from a single JavaScript layout/sidebar file (`assets/js/sidebar.js`).
 
+All nested detail pages across sections (cinema, tech-blog, photography, algorithmic-art) share the same content skeleton — a single `col-md-8` column inside `<main id="main-collapse">` with an `<h1>`, a `published-date` line, an intro paragraph, a hero block (image or interactive canvas + info panel), and trailing prose. See `docs/style-guide.md` for the canonical template.
+
 Benefits:
 
 - avoids duplicated markup

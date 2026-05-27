@@ -44,10 +44,17 @@
 │   └── *.html
 ├── tech-blog/
 │   ├── metadata.json
-│   └── *.html
-├── photo-blog/
+│   ├── accessibility.html
+│   ├── building-accessible-websites.html
+│   ├── getting-started-web-development.html
+│   ├── javascript-best-practices.html
+│   └── modern-css-techniques.html
+├── photography/
 │   ├── metadata.json
-│   └── *.html
+│   ├── athens.html
+│   ├── istanbul.html
+│   ├── strasbourg.html
+│   └── stuttgart.html
 ├── scripts/
 │   └── shape_images.py
 ├── docs/
@@ -97,7 +104,9 @@ Current examples:
 - `algorithmic-art/` — Interactive 3D visualizations, prime number explorations, and mathematical patterns
 - `cinema/` — Individual film reviews and articles
 - `tech-blog/` — Individual technology articles
-- `photo-blog/` — (Future) Individual photo stories
+- `photography/` — Individual photo stories
+
+Filenames inside section folders must match the `slug` field in that section's `metadata.json` (e.g. slug `building-accessible-websites` → `tech-blog/building-accessible-websites.html`). `blog.js` builds detail links as `./<section>/<slug>.html`, so any mismatch produces a 404.
 
 Each section folder requires:
 

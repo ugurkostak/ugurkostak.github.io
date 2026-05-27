@@ -80,9 +80,12 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 ├── tech-blog/
 │   ├── metadata.json
 │   └── *.html
-├── photo-blog/
+├── photography/
 │   ├── metadata.json
-│   └── *.html
+│   ├── athens.html
+│   ├── istanbul.html
+│   ├── strasbourg.html
+│   └── stuttgart.html
 ├── scripts/
 │   └── shape_images.py
 ├── docs/

@@ -10,7 +10,7 @@ Metadata files describe cinema articles, tech writings, photo stories, and galle
 cinema/metadata.json
 tech-blog/metadata.json
 algorithmic-art/metadata.json
-photo-blog/metadata.json
+photography/metadata.json
 ```
 
 ## Recommended Top-Level Shape
@@ -70,7 +70,8 @@ photo-blog/metadata.json
 
 - JSON must parse.
 - `id` and `slug` should be unique within the section.
-- `url` should point to an existing HTML file in the section folder.
+- `slug` must equal the basename of the corresponding HTML file in the section folder (e.g. slug `tar` ⇔ `cinema/tar.html`). `blog.js` builds links as `./<section>/<slug>.html`.
+- `url` (when present) should point to an existing HTML file in the section folder.
 - image paths should point to existing files in `assets/images/<section>/`.
 - published items should have a date and summary.
 - Articles should be ordered by date (newest first).

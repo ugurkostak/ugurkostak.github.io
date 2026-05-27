@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Building Accessible Websites - WCAG guidelines and practical tips for inclusive web design" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+
+  <title>Building Accessible Websites</title>  
+
+<link href="../assets/css/main.css" rel="stylesheet">
+<link href="../assets/css/custom.css" rel="stylesheet"></head>
+
+<body>
+
+ <!-- Add your content of header -->
+<header id="site-header">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="../index.html" class="navbar-brand">Ugur Kostak</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse"></div>
+  </nav>
+</header>
+<main class="" id="main-collapse">
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
+        <h1>Building Accessible Websites</h1>
+        <p class="published-date">Published: April 20, 2026</p>
+        <p>An introduction to web accessibility, WCAG guidelines, and practical tips for creating inclusive websites that everyone can use. Accessibility isn't a feature—it's a fundamental requirement. Building accessible websites benefits not only people with disabilities but improves the experience for everyone.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Why Accessibility Matters</h2>
+      <p>Over 1 billion people worldwide have some form of disability. Accessibility ensures that websites are usable by everyone, including people with visual, hearing, motor, and cognitive disabilities. Beyond the ethical imperative, accessible websites have better SEO, improved performance, and reach a wider audience. Accessibility is good design.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Semantic HTML</h2>
+      <p>Start with semantic HTML. Use heading hierarchy (h1, h2, etc.) logically, not for styling. Use semantic elements like nav, header, main, article, and footer. Use buttons for buttons and links for navigation. Use label elements for form fields. Semantic HTML provides structure that assistive technologies depend on, and it often requires no additional effort.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Color and Contrast</h2>
+      <p>Color alone should never convey information. Use sufficient color contrast—WCAG AA requires 4.5:1 for normal text. Test your color choices with colorblind vision simulators. Use patterns, icons, or text in addition to color to distinguish elements. Remember that contrast benefits everyone, especially users in bright sunlight or with older monitors.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Keyboard Navigation</h2>
+      <p>Not everyone can use a mouse. All interactive elements must be keyboard accessible. Implement a visible focus indicator, maintain logical tab order, and ensure keyboard shortcuts don't conflict. Test your site using only the keyboard. This improves usability for power users and is essential for people with motor disabilities.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Alternative Text and ARIA</h2>
+      <p>Provide meaningful alt text for images. Describe the content, not just the presence of an image. For complex graphics, provide detailed descriptions elsewhere on the page. Use ARIA attributes carefully to enhance semantic HTML, never to replace it. ARIA is a supplement, not a substitute for semantic HTML.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <h2>Testing for Accessibility</h2>
+      <p>Use automated tools like WAVE, Lighthouse, and axe to identify issues. But automation catches only 25-30% of accessibility problems. Combine tools with manual testing and, most importantly, test with real users with disabilities. Screen reader testing is crucial—NVDA and JAWS are commonly used tools. Make accessibility testing part of your development workflow.</p>
+    </div>
+
+  </div>
+  
+</div>
+    
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+--> <script type="text/javascript" src="../assets/js/main.js"></script>
+<script type="text/javascript" src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/init.js"></script>
+</body>
+
+</html>
