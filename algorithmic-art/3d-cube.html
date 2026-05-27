@@ -42,28 +42,40 @@
 
 <main id="main-collapse">
 
-  <section class="viz-page">
-    <header class="viz-header">
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
       <h1>3D Cube Visualization</h1>
-      <p class="viz-subtitle">Interactive algorithmic art — 3D cube</p>
-      <p class="viz-intro">Explore a simple interactive cube rendered with Three.js. Drag to rotate; the layout mirrors the Ulam Spiral page for a consistent look and feel.</p>
-    </header>
+      <p class="published-date">Published: May 2026</p>
+      <p>A simple interactive cube rendered in real time with Three.js. Drag the canvas to rotate the cube and observe how the MeshNormal shader colors each face based on the surface normal direction—an elegant way to make 3D geometry legible at a glance.</p>
+    </div>
 
-    <canvas id="cubeCanvas" class="viz-canvas-el" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
+    <div class="section-container-spacer">
+      <div class="viz-page">
+        <canvas id="cubeCanvas" class="viz-canvas-el" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
 
-    <aside class="info-panel" aria-labelledby="cubeAboutHeading">
-      <h2 id="cubeAboutHeading">About This Visualization</h2>
+        <aside class="info-panel" aria-labelledby="cubeAboutHeading">
+          <h2 id="cubeAboutHeading">About This Visualization</h2>
 
-      <ul class="legend">
-        <li><span class="legend-color cube"></span>Interactive 3D Cube</li>
-        <li><span class="legend-color matte"></span>MeshNormal shading</li>
-      </ul>
+          <ul class="legend">
+            <li><span class="legend-color cube"></span>Interactive 3D Cube</li>
+            <li><span class="legend-color matte"></span>MeshNormal shading</li>
+          </ul>
 
-      <p id="cubeDescription">Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
+          <p id="cubeDescription">Drag the canvas to rotate the cube. The renderer adapts to the viewport size and runs entirely in the browser using WebGL.</p>
 
-      <p><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
-    </aside>
-  </section>
+          <p><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+        </aside>
+      </div>
+    </div>
+
+    <p>Although the cube is the simplest of the Platonic solids, it is also one of the most useful test subjects in computer graphics. It exposes lighting, shading, projection, and interaction in a form that is easy to read but rich enough to reveal the behavior of the underlying renderer.</p>
+
+    <p>This page shares the same layout as the other algorithmic-art entries so that both the math and the visuals stay the focus—not the chrome around them.</p>
+
+  </div>
+</div>
 
 </main>
 

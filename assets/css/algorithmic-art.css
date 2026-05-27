@@ -8,36 +8,10 @@
 
 .viz-page {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  grid-template-areas:
-    "header header"
-    "canvas info";
-  column-gap: 32px;
-  row-gap: 24px;
+  grid-template-columns: 1fr 280px;
+  grid-template-areas: "canvas info";
+  column-gap: 24px;
   align-items: start;
-  max-width: 1100px;
-}
-
-.viz-header {
-  grid-area: header;
-  text-align: left;
-}
-
-.viz-header h1 {
-  margin: 0 0 6px;
-}
-
-.viz-header .viz-subtitle {
-  color: #888;
-  font-size: 14px;
-  margin: 0 0 12px;
-}
-
-.viz-header .viz-intro {
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
-  max-width: 760px;
 }
 
 /* Canvas: square, scales with column width */
@@ -53,12 +27,12 @@
   border: 1px solid #eee;
 }
 
-/* Info panel: fixed width, fixed-ish height, no card-in-card */
+/* Info panel: fixed width, sits to the right of the canvas */
 .info-panel {
   grid-area: info;
   align-self: start;
-  width: 300px;
-  padding: 20px 22px;
+  width: 100%;
+  padding: 16px 18px;
   border-left: 3px solid #ff6360;
   background: transparent;
 }
@@ -131,7 +105,6 @@
   .viz-page {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "header"
       "canvas"
       "info";
   }
