@@ -6,41 +6,61 @@
  */
 
 /* ============================================================================
-   CANVAS CONTAINER
+   UNIFIED VISUALIZATION SHELL
+   Canvas (left) + Info (right) sit inside one card with a vertical divider.
    ============================================================================ */
 
-.canvas-container {
+.viz-shell {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
-/* Both canvases render as a centered square that scales with column width */
+.viz-canvas {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  min-width: 0;
+}
+
+.viz-info {
+  flex: 0 0 320px;
+  padding: 28px;
+  border-left: 1px solid #eee;
+  background: #fafafa;
+  position: relative;
+}
+
+.viz-info::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 28px;
+  bottom: 28px;
+  width: 3px;
+  background: #ff6360;
+  border-radius: 2px;
+}
+
+.viz-info h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+/* Both canvases render square, fitted to available space */
 #cubeCanvas,
 #primeCanvas {
   display: block;
   border-radius: 4px;
   width: 100%;
-  max-width: 560px;
+  max-width: 520px;
   aspect-ratio: 1 / 1;
   height: auto;
-}
-
-/* ============================================================================
-   INFO PANEL (right-hand column)
-   ============================================================================ */
-
-.info-panel {
-  background: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  border-left: 4px solid #ff6360;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================================================
@@ -78,7 +98,7 @@
    ============================================================================ */
 
 .info-box {
-  background: #f9f9f9;
+  background: #fff;
   padding: 14px;
   border-radius: 4px;
   font-size: 13px;
@@ -109,24 +129,39 @@
 }
 
 /* ============================================================================
-   RESPONSIVE
+   RESPONSIVE - stack canvas above info on tablet/mobile
    ============================================================================ */
 
 @media (max-width: 991px) {
-  /* Tablet & below: info-panel stacks below canvas (Bootstrap handles via grid) */
-  .canvas-container {
-    padding: 16px;
+  .viz-shell {
+    flex-direction: column;
+  }
+
+  .viz-info {
+    flex-basis: auto;
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+
+  .viz-info::before {
+    left: 28px;
+    right: 28px;
+    top: 0;
+    bottom: auto;
+    width: auto;
+    height: 3px;
   }
 }
 
 @media (max-width: 600px) {
-  .canvas-container {
-    padding: 10px;
+  .viz-canvas {
+    padding: 16px;
   }
 
-  .info-panel {
-    padding: 18px;
+  .viz-info {
+    padding: 20px;
   }
 }
+
 
 

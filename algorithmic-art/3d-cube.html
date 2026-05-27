@@ -51,33 +51,33 @@
     </div>
   </div>
 
-  <!-- Two-column row: canvas left, info panel right -->
+  <!-- Unified visualization shell: canvas + info side-by-side in one card -->
   <div class="row">
-    <div class="col-xs-12 col-md-8 section-container-spacer">
-      <div class="canvas-container">
-        <canvas id="cubeCanvas" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-4 section-container-spacer">
-      <div class="info-panel">
-        <h2>About This Visualization</h2>
-
-        <div class="legend">
-          <div class="legend-item">
-            <div class="legend-color cube"></div>
-            <span>Interactive 3D Cube</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-color matte"></div>
-            <span>MeshNormal shading</span>
-          </div>
+    <div class="col-xs-12 section-container-spacer">
+      <div class="viz-shell">
+        <div class="viz-canvas">
+          <canvas id="cubeCanvas" aria-label="3D cube visualization" aria-describedby="cubeDescription"></canvas>
         </div>
 
-        <div class="description-text" id="cubeDescription">
-          <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
+        <div class="viz-info">
+          <h2>About This Visualization</h2>
 
-          <p class="info-content-interaction"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color cube"></div>
+              <span>Interactive 3D Cube</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color matte"></div>
+              <span>MeshNormal shading</span>
+            </div>
+          </div>
+
+          <div class="description-text" id="cubeDescription">
+            <p>Drag the canvas to rotate the cube. The renderer adapts to the viewport size. This page uses the same layout and visual cues as the "Beauty of Data and Parameters" collection so both visualizations feel consistent.</p>
+
+            <p class="info-content-interaction"><strong>Interaction:</strong> Drag to rotate. Resize the window to adjust the canvas.</p>
+          </div>
         </div>
       </div>
     </div>
