@@ -44,7 +44,12 @@ function initAlexNetFlow() {
 
 function buildScene(canvas, infoEl, data) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
-  renderer.setClearColor(0xeef1f5);
+  // Use the same background as other algorithmic-art items (CSS var fallback)
+  // Try to read the CSS variable, fallback to a subtle gray if not found
+  let bg = getComputedStyle(document.body).getPropertyValue('--surface-subtle').trim();
+  if (!bg) bg = '#f6f8fa';
+  // Convert CSS color to THREE.Color if needed
+  renderer.setClearColor(bg);
   renderer.setPixelRatio(window.devicePixelRatio || 1);
   if ('outputColorSpace' in renderer) renderer.outputColorSpace = THREE.SRGBColorSpace;
 

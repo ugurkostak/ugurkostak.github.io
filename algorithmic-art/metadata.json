@@ -1,5 +1,18 @@
 [
   {
+    "id": "6",
+    "title": "Manhattan Distance Visualization",
+    "slug": "manhattan-distance",
+    "description": "Interactive demo of the Manhattan (L1) distance metric: drag points, see axis-aligned paths and diamond neighborhoods.",
+    "date": "2026-06-01",
+    "author": "Ugur Kostak",
+    "category": "visualization",
+    "tags": ["geometry", "distance", "manhattan", "l1", "interactive", "2d"],
+    "image": "",
+    "content": "An interactive visualization of the Manhattan (L1) distance metric. Drag points to see how the sum of absolute differences defines geometry, shortest paths, and neighborhoods in 2D.",
+    "featured": false
+  },
+  {
     "id": "5",
     "title": "AlexNet Visualization",
     "slug": "alexnet",
