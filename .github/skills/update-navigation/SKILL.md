@@ -11,7 +11,7 @@ Use this skill when adding, removing, renaming, or reordering navigation items f
 
 ## Steps
 
-1. Open the sidebar/layout JavaScript file.
+1. Open the JavaScript file containing the nav configuration array (e.g., `assets/js/sidebar.js` or `assets/js/layout.js`). If it is unclear which file holds the nav array, ask the user.
 2. Locate the nav configuration array.
 3. Update labels, URLs, titles, and optional section path matching.
 4. Confirm every nav URL exists or is intentionally planned.

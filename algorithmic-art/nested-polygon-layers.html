@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Nested Polygon Layers - a parametric geometric visualization composed of nested polygons that gradually decrease in size" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+
+  <title>Nested Polygon Layers</title>
+
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/algorithmic-art.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="site-header">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="../index.html" class="navbar-brand">Ugur Kostak</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse"></div>
+  </nav>
+</header>
+
+<main id="main-collapse">
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
+      <h1>Nested Polygon Layers</h1>
+      <p class="published-date">May 2026</p>
+      <p>Nested Polygon Layers is a beautiful geometric shape composed of nested polygons that gradually decrease in size. Each layer keeps the same basic polygonal rule, but the radius shrinks and the angle shifts, creating a quiet sense of depth as the figure moves inward.</p>
+
+      <p>This version treats the form as a parametric design. Sides, layer depth, twist, and shrink define the shells, while straight connections between matching vertices create the illusion of curved petals.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <div class="viz-page">
+        <canvas id="nestedPolygonLayersCanvas" class="viz-canvas-el" aria-label="Nested polygon layers visualization of shrinking rotated polygons" aria-describedby="nestedPolygonLayersDescription">
+          Nested polygon layers visualization of shrinking rotated polygons.
+        </canvas>
+
+        <aside class="info-panel" aria-labelledby="nestedPolygonLayersAboutHeading">
+          <h2 id="nestedPolygonLayersAboutHeading">About This Visualization</h2>
+
+          <ul class="legend">
+            <li><span class="legend-color composite"></span>Outer layer</li>
+            <li><span class="legend-color one"></span>Middle layers</li>
+            <li><span class="legend-color prime"></span>Inner layer</li>
+          </ul>
+
+          <div id="nestedPolygonLayersInfo" class="info-box" role="status" aria-live="polite">
+            <span class="info-placeholder">Adjust the parameters or hover a layer to inspect it.</span>
+          </div>
+
+          <p id="nestedPolygonLayersDescription">This geometric view organizes repeated polygons into nested layers. Each new layer is smaller and rotated, while the parametric controls change how the structure folds toward the center.</p>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section-container-spacer">
+      <h2>The mathematical idea</h2>
+      <p>The construction starts with a regular polygon. The next layer uses the same number of sides, but its radius is multiplied by a shrink factor and its rotation is advanced by a fixed twist angle. Repeating that rule creates a sequence of similar polygons, each one slightly smaller and slightly turned.</p>
+
+      <p>The layered structure comes from the sequence itself: outer shell, middle shells, and inner layer. Connecting each vertex to the corresponding vertex in the next polygon keeps the rule simple, but the accumulated twist makes the straight segments read as flowing curves.</p>
+    </section>
+
+    <section class="section-container-spacer">
+      <h2>Parametric design</h2>
+      <p>In this sketch, the number of sides sets the polygon template, the layer count controls how many shells are drawn, the twist rotates each shell, and the shrink factor decides how quickly the structure moves toward the center.</p>
+
+      <p>Those parameters keep the design readable: every shell follows the same rule, but a small change in twist or layer depth reshapes the whole field. That makes the visualization less like a static diagram and more like a design surface for testing how local rules create global structure.</p>
+    </section>
+
+    <section class="section-container-spacer">
+      <h2>Why it works visually</h2>
+      <p>Drawing the layers as rings makes the structure readable at a glance. The outer polygon establishes the visible boundary. The middle layers show the rotation and contraction. The innermost layer gives the eye a small center of gravity.</p>
+
+      <p>The visualization uses this structure to make a simple polygon rule feel like a layered object. The goal is to let the viewer read the form as outside, shell, inner shell, and center, while still seeing the parametric rule that produced it.</p>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/init.js"></script>
+<script src="../assets/js/algorithmic-art/nested-polygon-layers.js"></script>
+
+</body>
+
+</html>

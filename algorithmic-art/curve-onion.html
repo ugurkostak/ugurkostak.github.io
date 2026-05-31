@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Curve Onion - an interactive visualization of the curve family y = x^n and y = x^(1/n) forming nested onion-like layers" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+
+  <title>Curve Onion - Power Functions as Nested Layers</title>
+
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/algorithmic-art.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="site-header">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="../index.html" class="navbar-brand">Ugur Kostak</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse"></div>
+  </nav>
+</header>
+
+<main id="main-collapse">
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
+      <h1>Curve Onion</h1>
+      <p class="published-date">May 2026</p>
+      <p>Plot the entire family of power functions y&nbsp;=&nbsp;x<sup>n</sup> and their mirror images y&nbsp;=&nbsp;x<sup>1/n</sup> for n&nbsp;=&nbsp;1&nbsp;to&nbsp;100 on the same unit square, and an onion appears. The curves layer over each other from the diagonal outward, peeling apart like the rings of a cross-section.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <div class="viz-page">
+        <canvas id="curveOnionCanvas" class="viz-canvas-el" aria-label="Curve Onion visualization of power functions y=x^n" aria-describedby="curveOnionDescription">
+          Curve Onion visualization.
+        </canvas>
+
+        <aside class="info-panel" aria-labelledby="curveOnionAboutHeading">
+          <h2 id="curveOnionAboutHeading">About This Visualization</h2>
+
+          <ul class="legend">
+            <li><span class="legend-color composite"></span>n ≈ 1 (outer, near diagonal)</li>
+            <li><span class="legend-color one"></span>middle n</li>
+            <li><span class="legend-color prime"></span>large n (hugs axes)</li>
+          </ul>
+
+          <div id="curveOnionInfo" class="info-box" role="status" aria-live="polite">
+            <span class="info-placeholder">Hover a curve to inspect it.</span>
+          </div>
+
+          <p id="curveOnionDescription">Each curve y&nbsp;=&nbsp;x<sup>n</sup> lives between y&nbsp;=&nbsp;x (diagonal, n&nbsp;=&nbsp;1) and the two axes (n&nbsp;→&nbsp;∞). Its mirror y&nbsp;=&nbsp;x<sup>1/n</sup> reflects across the diagonal. Together they fill the unit square like concentric onion skins.</p>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section-container-spacer">
+      <h2>The mathematical idea</h2>
+      <p>For any real exponent n ≥ 1, the curve y&nbsp;=&nbsp;x<sup>n</sup> on [0,&nbsp;1] starts at the origin, ends at (1,&nbsp;1), and bows toward the x-axis. When n&nbsp;=&nbsp;1 the curve is the diagonal itself. As n grows the curve hugs the x-axis more tightly, until in the limit it collapses onto the axes and the single point (1,&nbsp;1).</p>
+
+      <p>The mirror curve y&nbsp;=&nbsp;x<sup>1/n</sup> is the inverse: it bows upward toward the y-axis by the same amount, because swapping x and y gives the same graph reflected across y&nbsp;=&nbsp;x. Plotting both families together fills the square symmetrically, and the result looks like the cross-section of an onion: thin outer skins near the diagonal, thicker inner rings as n grows, converging at the center point.</p>
+    </section>
+
+    <section class="section-container-spacer">
+      <h2>Why n matters</h2>
+      <p>Small values of n produce curves that are hard to tell apart from the diagonal. The visible density is low near n&nbsp;=&nbsp;1 because all the curves start close together there. As n increases the curves spread out, occupying more of the area between the diagonal and the axes, and the overall shape becomes clearly layered.</p>
+
+      <p>Picking a fixed n and tracing it through both families shows a pair of arcs symmetric about y&nbsp;=&nbsp;x. They meet at (0,&nbsp;0) and (1,&nbsp;1) and enclose a lens-shaped region whose width grows with n. The visualization lets you hover any curve and read off exactly which n it represents, making the abstract parameter concrete.</p>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/init.js"></script>
+<script src="../assets/js/algorithmic-art/curve-onion.js"></script>
+
+</body>
+
+</html>

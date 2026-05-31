@@ -4,44 +4,48 @@
             "id": "1",
             "title": "Stuttgart",
             "slug": "stuttgart",
-            "description": "Urban landscapes from Stuttgart",
+            "description": "A city walk through Stuttgart's layered urban landscape, where modern architecture, surviving fragments, hills, and afternoon light meet.",
             "date": "2026-03-15",
             "author": "Ugur Kostak",
             "tags": ["urban", "architecture"],
             "image": "./assets/images/photos/small/DSC_0929.PNG",
+            "content": "This Stuttgart set follows the city from Schlossplatz outward, looking for the quiet tension between post-war surfaces and older architectural traces. The longer metadata mirrors the page's focus on late-afternoon light, minimal equipment, and the small juxtapositions that make the city visually layered.",
             "featured": true
         },
         {
             "id": "2",
             "title": "Strasbourg",
             "slug": "strasbourg",
-            "description": "Historic charm of Strasbourg's streets",
+            "description": "A winter walk through Strasbourg's canals, half-timbered houses, sandstone details, and French-German street rhythm.",
             "date": "2026-02-10",
             "author": "Ugur Kostak",
             "tags": ["travel", "history"],
             "image": "./assets/images/photos/small/DSC_0994.PNG",
+            "content": "The Strasbourg gallery leans into the city's mixed visual language: gothic sandstone, quiet canals, half-timbered houses, and narrow lanes softened by winter light. The expanded summary gives the listing enough context to feel like a photographic note rather than only a location label.",
             "featured": true
         },
         {
             "id": "3",
             "title": "Athens",
             "slug": "athens",
-            "description": "Ancient beauty meets modern life",
+            "description": "A street-level Athens series that looks beyond monuments toward cafes, graffiti, neighborhoods, cats, and Mediterranean winter light.",
             "date": "2026-01-20",
             "author": "Ugur Kostak",
             "tags": ["travel", "ancient"],
             "image": "./assets/images/photos/small/DSC_0928.PNG",
+            "content": "Athens is summarized here as a lived city rather than a postcard of ruins. The listing now points toward the page's quieter details: Exarcheia mornings, Plaka shadows, Monastiraki stalls, warm stone, and the everyday texture below the Acropolis skyline.",
             "featured": false
         },
         {
             "id": "4",
             "title": "Istanbul",
             "slug": "istanbul",
-            "description": "Where continents and cultures meet",
+            "description": "A Bosphorus-facing Istanbul series about ferries, bridges, minarets, rooftops, and the city's constant movement between continents.",
             "date": "2025-12-01",
             "author": "Ugur Kostak",
             "tags": ["travel", "culture"],
             "image": "./assets/images/photos/small/DSC_0929.PNG",
+            "content": "The Istanbul metadata now reflects the page's sense of a city in motion: fishermen on Galata Bridge, commuters, mosques catching afternoon light, and the Bosphorus tying the frames together. It keeps the emphasis on return visits, shifting seasons, and small observations rather than a checklist of landmarks.",
             "featured": false
         }
     ]

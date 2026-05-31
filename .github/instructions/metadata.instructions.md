@@ -18,6 +18,8 @@ Metadata files support better UX, listing pages, cards, filters, sorting, search
 - Use ISO-style dates: `YYYY-MM-DD`.
 - Prefer arrays for `tags` and `categories`.
 - **Articles should be ordered by date (newest first).**
+- For new draft blog/gallery pages without source copy, use explicit Lorem ipsum placeholder text in metadata `description`/`content` fields instead of inventing real article claims. Mark the entry as draft or keep it unfeatured until real copy is provided.
+- For published or content-ready entries, avoid generic placeholders such as "Short description" or "Path or identifier"; write useful listing text that reflects the page.
 
 ## Recommended Entry Shape
 

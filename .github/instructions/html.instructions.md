@@ -30,6 +30,7 @@ Page-specific content should be inside:
 - Use meaningful `alt` text for informative images.
 - Decorative images should use empty `alt=""` when appropriate.
 - Keep relative paths compatible with root and nested pages.
+- If creating a new draft blog/gallery page and no source content is provided, use clear Lorem ipsum placeholder copy in the body instead of invented real content. Replace it before treating the page as published.
 
 ## Validation
 

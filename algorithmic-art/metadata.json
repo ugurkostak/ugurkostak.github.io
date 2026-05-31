@@ -1,28 +1,54 @@
 [
   {
+    "id": "4",
+    "title": "Curve Onion",
+    "slug": "curve-onion",
+    "description": "Plot y = x^n and y = x^(1/n) for n = 1 to 100 on the unit square and an onion emerges: power curves layering from the diagonal outward like concentric skins.",
+    "date": "2026-05-31",
+    "author": "Ugur Kostak",
+    "category": "mathematics",
+    "tags": ["math", "functions", "curves", "patterns", "interactive"],
+    "image": "",
+    "content": "Curve Onion plots the full family of power functions y = x^n and their inverses y = x^(1/n) on the unit square. As n grows from 1 to 100, each curve bows further from the diagonal and closer to the axes, filling the square with symmetric, onion-like layers. Hover any curve to read its exponent and role. Adjust N to add or remove layers, switch between the two families, or show both together.",
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Nested Polygon Layers",
+    "slug": "nested-polygon-layers",
+    "description": "A geometric parametric design composed of nested polygons that gradually decrease in size and rotate into layered petals.",
+    "date": "2026-05-31",
+    "author": "Ugur Kostak",
+    "category": "mathematics",
+    "tags": ["math", "geometry", "polygons", "parametric-design", "interactive", "patterns"],
+    "image": "",
+    "content": "Nested Polygon Layers is a beautiful geometric shape composed of nested polygons that gradually decrease in size. Sides, layer depth, twist, and shrink define the shells, while straight connections between matching vertices create the illusion of curved petals.",
+    "featured": false
+  },
+  {
     "id": "1",
     "title": "3D Cube Visualization",
     "slug": "3d-cube",
-    "description": "Interactive 3D rotating cube - Mathematical elegance in 3 dimensions",
+    "description": "A compact WebGL geometry study that uses an interactive cube to make rotation, projection, and surface direction easier to read.",
     "date": "2026-05-26",
     "author": "Ugur Kostak",
     "category": "visualization",
     "tags": ["3d", "geometry", "interactive"],
     "image": "",
-    "content": "Interactive 3D cube visualization",
+    "content": "A browser-based 3D cube experiment that makes simple geometry feel tangible. The cube can be rotated directly, while the surface colors reveal how its faces point through space. It is a small visual test bed for projection, interaction, and the way a renderer turns mathematical shape into something readable.",
     "featured": true
   },
   {
     "id": "2",
     "title": "The Beauty of Prime Numbers",
     "slug": "ulam-spiral",
-    "description": "Exploring the elegance and mystery of prime numbers with Ulam Spiral visualization",
+    "description": "A visual walk through the Ulam Spiral, where prime numbers form surprising diagonal patterns inside a simple grid of natural numbers.",
     "date": "2026-05-20",
     "author": "Ugur Kostak",
     "category": "mathematics",
     "tags": ["math", "primes", "patterns"],
     "image": "",
-    "content": "Placeholder article about the beauty of mathematics",
+    "content": "An exploration of the Ulam Spiral, where natural numbers are arranged in a square spiral and prime numbers are highlighted. The result turns an apparently irregular sequence into visible diagonal patterns and prime-rich structures, showing how a very simple drawing rule can expose hidden order in number theory.",
     "featured": true
   }
 ]
