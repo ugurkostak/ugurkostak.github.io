@@ -1,0 +1,318 @@
+{
+  "name": "AlexNet",
+  "source": "torchvision.models.alexnet (IMAGENET1K_V1)",
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "total_params": 61100840,
+  "layers": [
+    {
+      "label": "features.0.Conv2d",
+      "type": "Conv2d",
+      "in_channels": 3,
+      "out_channels": 64,
+      "kernel_size": [
+        11,
+        11
+      ],
+      "stride": [
+        4,
+        4
+      ],
+      "padding": [
+        2,
+        2
+      ],
+      "params": 23296,
+      "out_shape": [
+        1,
+        64,
+        55,
+        55
+      ]
+    },
+    {
+      "label": "features.1.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        64,
+        55,
+        55
+      ]
+    },
+    {
+      "label": "features.2.MaxPool2d",
+      "type": "MaxPool2d",
+      "kernel_size": 3,
+      "stride": 2,
+      "params": 0,
+      "out_shape": [
+        1,
+        64,
+        27,
+        27
+      ]
+    },
+    {
+      "label": "features.3.Conv2d",
+      "type": "Conv2d",
+      "in_channels": 64,
+      "out_channels": 192,
+      "kernel_size": [
+        5,
+        5
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "padding": [
+        2,
+        2
+      ],
+      "params": 307392,
+      "out_shape": [
+        1,
+        192,
+        27,
+        27
+      ]
+    },
+    {
+      "label": "features.4.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        192,
+        27,
+        27
+      ]
+    },
+    {
+      "label": "features.5.MaxPool2d",
+      "type": "MaxPool2d",
+      "kernel_size": 3,
+      "stride": 2,
+      "params": 0,
+      "out_shape": [
+        1,
+        192,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.6.Conv2d",
+      "type": "Conv2d",
+      "in_channels": 192,
+      "out_channels": 384,
+      "kernel_size": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "padding": [
+        1,
+        1
+      ],
+      "params": 663936,
+      "out_shape": [
+        1,
+        384,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.7.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        384,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.8.Conv2d",
+      "type": "Conv2d",
+      "in_channels": 384,
+      "out_channels": 256,
+      "kernel_size": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "padding": [
+        1,
+        1
+      ],
+      "params": 884992,
+      "out_shape": [
+        1,
+        256,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.9.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        256,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.10.Conv2d",
+      "type": "Conv2d",
+      "in_channels": 256,
+      "out_channels": 256,
+      "kernel_size": [
+        3,
+        3
+      ],
+      "stride": [
+        1,
+        1
+      ],
+      "padding": [
+        1,
+        1
+      ],
+      "params": 590080,
+      "out_shape": [
+        1,
+        256,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.11.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        256,
+        13,
+        13
+      ]
+    },
+    {
+      "label": "features.12.MaxPool2d",
+      "type": "MaxPool2d",
+      "kernel_size": 3,
+      "stride": 2,
+      "params": 0,
+      "out_shape": [
+        1,
+        256,
+        6,
+        6
+      ]
+    },
+    {
+      "label": "avgpool.AdaptiveAvgPool2d",
+      "type": "AdaptiveAvgPool2d",
+      "output_size": [
+        6,
+        6
+      ],
+      "params": 0,
+      "out_shape": [
+        1,
+        256,
+        6,
+        6
+      ]
+    },
+    {
+      "label": "classifier.0.Dropout",
+      "type": "Dropout",
+      "p": 0.5,
+      "params": 0,
+      "out_shape": [
+        1,
+        9216
+      ]
+    },
+    {
+      "label": "classifier.1.Linear",
+      "type": "Linear",
+      "in_features": 9216,
+      "out_features": 4096,
+      "params": 37752832,
+      "out_shape": [
+        1,
+        4096
+      ]
+    },
+    {
+      "label": "classifier.2.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        4096
+      ]
+    },
+    {
+      "label": "classifier.3.Dropout",
+      "type": "Dropout",
+      "p": 0.5,
+      "params": 0,
+      "out_shape": [
+        1,
+        4096
+      ]
+    },
+    {
+      "label": "classifier.4.Linear",
+      "type": "Linear",
+      "in_features": 4096,
+      "out_features": 4096,
+      "params": 16781312,
+      "out_shape": [
+        1,
+        4096
+      ]
+    },
+    {
+      "label": "classifier.5.ReLU",
+      "type": "ReLU",
+      "params": 0,
+      "out_shape": [
+        1,
+        4096
+      ]
+    },
+    {
+      "label": "classifier.6.Linear",
+      "type": "Linear",
+      "in_features": 4096,
+      "out_features": 1000,
+      "params": 4097000,
+      "out_shape": [
+        1,
+        1000
+      ]
+    }
+  ]
+}

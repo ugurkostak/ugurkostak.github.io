@@ -124,6 +124,60 @@
   }
 }
 
+/* ------------------------------------------------------------------
+ * Expanded (near-fullscreen) viz layout.
+ * Toggled by the in-page Expand button. Lifts the .viz-page out of the
+ * article flow into a fixed-position overlay so the canvas can grow
+ * to the full viewport while the info panel docks to the right.
+ * ------------------------------------------------------------------ */
+.viz-page.viz-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--surface-subtle);
+  padding: 16px;
+  margin: 0;
+  column-gap: 16px;
+  grid-template-columns: 1fr 320px;
+  align-items: stretch;
+}
+
+.viz-page.viz-expanded .viz-canvas-el {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.viz-page.viz-expanded .info-panel {
+  height: 100%;
+  overflow: auto;
+  padding: 16px 18px;
+  background: var(--surface-muted);
+  border-left: 3px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Lock background scrolling while expanded. */
+body.viz-expanded-lock {
+  overflow: hidden;
+}
+
+/* On narrow viewports, stack canvas above info even when expanded. */
+@media (max-width: 900px) {
+  .viz-page.viz-expanded {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "canvas"
+      "info";
+    grid-template-rows: 1fr auto;
+  }
+
+  .viz-page.viz-expanded .info-panel {
+    max-height: 40vh;
+  }
+}
+
 
 
 

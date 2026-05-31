@@ -1,5 +1,18 @@
 [
   {
+    "id": "5",
+    "title": "AlexNet Visualization",
+    "slug": "alexnet",
+    "description": "Interactive 3D view of AlexNet's fully connected classifier head: sampled neurons, biases, and weighted connections you can rotate, zoom, and hover.",
+    "date": "2026-06-01",
+    "author": "Ugur Kostak",
+    "category": "visualization",
+    "tags": ["machine-learning", "neural-networks", "alexnet", "fully-connected", "interactive", "3d"],
+    "image": "",
+    "content": "A 3D, mouse-driven look at the three Linear layers of the official torchvision AlexNet (IMAGENET1K_V1). Four columns of sampled neurons are linked by colored weight lines, with biases on the spheres and exact weights on hover.",
+    "featured": true
+  },
+  {
     "id": "4",
     "title": "Curve Onion",
     "slug": "curve-onion",

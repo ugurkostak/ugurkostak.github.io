@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="AlexNet Visualization - an interactive walkthrough of the AlexNet convolutional neural network architecture" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon">
+  <link href="../assets/favicon.ico" rel="icon">
+
+  <title>AlexNet Visualization</title>
+
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/algorithmic-art.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="site-header">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="../index.html" class="navbar-brand">Ugur Kostak</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse"></div>
+  </nav>
+</header>
+
+<main id="main-collapse">
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
+      <h1>AlexNet Visualization</h1>
+      <p class="published-date">May 31, 2026</p>
+      <p>A 3D, mouse-driven look at the fully connected classifier head of the official
+        pretrained AlexNet model from <code>torchvision</code> (<code>IMAGENET1K_V1</code>).
+        Each column is a sampled layer of neurons; lines between columns are the
+        learned weights, colored by sign and modulated by magnitude.</p>
+    </div>
+
+    <div class="section-container-spacer">
+      <div class="viz-page">
+        <canvas id="alexnetCanvas" class="viz-canvas-el" aria-label="AlexNet architecture visualization" aria-describedby="alexnetDescription">
+          AlexNet visualization placeholder.
+        </canvas>
+
+        <aside class="info-panel" aria-labelledby="alexnetAboutHeading">
+          <h2 id="alexnetAboutHeading">About This Visualization</h2>
+
+          <ul class="legend">
+            <li><span class="legend-color" style="background:#b0bec5"></span>Image input</li>
+            <li><span class="legend-color" style="background:#26a69a"></span>Conv1 – Conv5 (teal → dark teal)</li>
+            <li><span class="legend-color" style="background:#7e57c2"></span>Flatten (9216)</li>
+            <li><span class="legend-color" style="background:#ff9800"></span>FC1 · classifier[1]</li>
+            <li><span class="legend-color" style="background:#fb8c00"></span>FC2 · classifier[4]</li>
+            <li><span class="legend-color" style="background:#e53935"></span>Output · classifier[6]</li>
+            <li><span class="legend-color" style="background:#1976d2"></span>Positive weight</li>
+            <li><span class="legend-color" style="background:#d32f2f"></span>Negative weight</li>
+          </ul>
+
+          <div id="alexnetInfo" class="info-box" role="status" aria-live="polite">
+            <span class="info-placeholder">Loading fully connected weights…</span>
+          </div>
+
+          <p id="alexnetDescription">Drag to orbit · scroll to zoom · right-drag (or shift-drag) to pan. Hover a neuron to preview its weighted connections, or click to pin them. Click again (or on empty space) to release.</p>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section-container-spacer">
+      <h2>The fully connected head</h2>
+      <p>AlexNet's classifier is three <code>Linear</code> layers that take the flattened
+        <code>256&times;6&times;6 = 9216</code> feature vector produced by the convolutional stack
+        and map it through <code>4096 → 4096 → 1000</code> neurons to the final ImageNet logits.
+        These three layers alone hold about <strong>58.6&nbsp;million</strong> parameters, or roughly
+        <strong>96%</strong> of the entire network.</p>
+      <p>The scene spans the <strong>full AlexNet pipeline</strong>: the RGB image input,
+        five convolutional stages with their pooling, the flatten step, and the three fully
+        connected layers that produce the final 1000-class logits. Each stage is drawn as a
+        free-floating cluster of <strong>128 translucent interactive neurons</strong> sized from
+        its real tensor shape, so the dramatic geometry of the network &mdash; tall early conv
+        feature stacks shrinking spatially while growing in channels, then exploding into a
+        9216-wide flat vector that's compressed back down to 1000 &mdash; reads at a glance,
+        without any bounding boxes or labels getting in the way. Hovering a neuron
+        <strong>fires</strong> it: the sphere jumps to full opacity, ignites with a hot yellow
+        emissive, and (for FC layers) lights up its weighted connections to the next layer.</p>
+    </section>
+
+    <section class="section-container-spacer">
+      <h2>Reading neurons and connections</h2>
+      <p>Every stage carries 128 translucent neuron spheres at rest. Hovering one
+        <em>fires</em> it &mdash; the node turns opaque, its emissive flips on, and it scales up.
+        For FC layers, firing additionally draws the neuron's connections to the next layer as
+        3D tubes whose <strong>thickness encodes</strong> <code>|w|</code> &mdash; no numeric
+        labels needed. Conv/image neurons have no per-row weight matrix extracted, so for those
+        firing is the entire highlight. Click to pin / unpin.</p>
+    </section>
+
+    <section class="section-container-spacer">
+      <h2>How the data was produced</h2>
+      <p>The pretrained weights are loaded with
+        <code>torchvision.models.alexnet(weights=AlexNet_Weights.IMAGENET1K_V1)</code>.
+        The script <code>scripts/extract_alexnet.py</code> picks 256 random neuron
+        indices per layer dimension (with a fixed seed), dumps the <code>256&times;256</code>
+        weight submatrices, biases, and per-output-neuron statistics to
+        <code>assets/data/alexnet/fc_sample.json</code>, and the page fetches that JSON at
+        runtime. Rendering uses the vendored Three.js build under
+        <code>assets/js/algorithmic-art/vendor/</code> with a custom orbit camera controller for
+        drag, wheel zoom, and right-drag pan.</p>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/init.js"></script>
+<script type="module" src="../assets/js/algorithmic-art/alexnet.js"></script>
+
+</body>
+
+</html>
