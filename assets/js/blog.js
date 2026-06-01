@@ -80,13 +80,14 @@
    * per-entry artwork (e.g. algorithmic-art visualizations).
    */
   const sectionFallbackImage = {
-    'algorithmic-art': './assets/images/algorithmic-art/algorithmic-art-tile.png',
+    'algorithmic-art': './assets/images/algorithmic-art/algorithmic-art-placeholder.png',
     'tech-blog': './assets/images/tech/tech-blog-tile.png',
     'cinema': '',
     'photography': ''
   };
 
   function getArticleImage(article, page) {
+    if (page === 'algorithmic-art') return sectionFallbackImage[page] || '';
     if (article.image) return article.image;
     return sectionFallbackImage[page] || '';
   }

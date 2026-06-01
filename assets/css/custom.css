@@ -470,6 +470,13 @@ blockquote {
   transform-origin: center;
 }
 
+.section-card img.section-card-zoom {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
 .section-link {
   display: block;
   position: relative;
