@@ -306,16 +306,22 @@
     // synthetic events some browsers still dispatch.
     var btns = Array.prototype.slice.call(document.querySelectorAll('.navbar-toggle'));
     var navCollapse = document.getElementById('navbar-collapse');
+    var sidebarEl = document.querySelector('nav.sidebar');
+    var mainCollapse = document.getElementById('main-collapse');
     var lastToggleAt = 0;
     if (btns && btns.length && navCollapse) {
       function openNav() {
         navCollapse.classList.add('open');
         navCollapse.style.display = 'block';
+        if (sidebarEl) sidebarEl.classList.add('open');
+        if (mainCollapse) mainCollapse.classList.add('open');
         btns.forEach(function (b) { b.classList.remove('collapsed'); b.setAttribute('aria-expanded', 'true'); });
       }
       function closeNav() {
         navCollapse.classList.remove('open');
         navCollapse.style.display = '';
+        if (sidebarEl) sidebarEl.classList.remove('open');
+        if (mainCollapse) mainCollapse.classList.remove('open');
         btns.forEach(function (b) { b.classList.add('collapsed'); b.setAttribute('aria-expanded', 'false'); });
       }
 
