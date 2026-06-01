@@ -1,0 +1,13 @@
+{
+    "chat.mcp.serverSampling": {
+        "ugurkostak.github.io/.vscode/mcp.json: chrome-devtools": {
+            "allowedModels": [
+                "copilot/auto",
+                "copilotcli/claude-sonnet-4.6",
+                "copilotcli/claude-opus-4.7",
+                "claude-code/claude-opus-4.7",
+                "copilot/claude-opus-4.7"
+            ]
+        }
+    }
+}
