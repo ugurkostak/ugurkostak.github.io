@@ -1,11 +1,35 @@
 {
     "articles": [
         {
+            "id": "7",
+            "title": "The Royal Tenenbaums",
+            "slug": "the-royal-tenenbaums",
+            "description": "A precise and tender family comedy about old wounds, eccentric rituals, failed promise, and the difficult work of repair.",
+            "date": "2001-12-14",
+            "publishedDate": "2026-06-01",
+            "author": "Ugur Kostak",
+            "tags": ["comedy", "drama", "family"],
+            "image": "./assets/images/movies/the-royal-tenenbaums-2.jpg",
+            "contentImages": [
+                {
+                    "src": "./assets/images/movies/the-royal-tenenbaums-2.jpg",
+                    "alt": "The Royal Tenenbaums (still)"
+                },
+                {
+                    "src": "./assets/images/movies/the-royal-tenenbaums.png",
+                    "alt": "The Royal Tenenbaums"
+                }
+            ],
+            "content": "The Royal Tenenbaums is framed as more than a stylish ensemble comedy. The listing copy now points to the page's focus on family distance, Wes Anderson's precise visual language, Royal's uneasy return, and the film's mixture of deadpan humor, sadness, and fragile forgiveness.",
+            "featured": false
+        },
+        {
             "id": "1",
             "title": "TÁR",
             "slug": "tar",
             "description": "A psychological character study about power, public reputation, and moral compromise in the world of classical music.",
             "date": "2022-10-01",
+            "publishedDate": "2022-10-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "music"],
             "image": "./assets/images/movies/tar.jpeg",
@@ -18,6 +42,7 @@
             "slug": "banshees-of-inisherin",
             "description": "A darkly comic island story about friendship, rejection, loneliness, and the strange pride that turns hurt into violence.",
             "date": "2022-10-01",
+            "publishedDate": "2022-10-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "island"],
             "image": "./assets/images/movies/The_Banshees_of_Inisherin.jpg",
@@ -30,6 +55,7 @@
             "slug": "aftersun",
             "description": "A quiet, memory-shaped father-daughter story about love, distance, and the sadness that becomes clearer with time.",
             "date": "2022-04-01",
+            "publishedDate": "2022-04-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "family"],
             "image": "./assets/images/movies/aftersun.jpg",
@@ -42,6 +68,7 @@
             "slug": "everything-everywhere-all-at-once",
             "description": "A multiverse film that turns chaotic invention into a tender story about family, identity, and acceptance.",
             "date": "2022-03-01",
+            "publishedDate": "2022-03-01",
             "author": "Ugur Kostak",
             "tags": ["sci-fi", "multiverse"],
             "image": "./assets/images/movies/everything_everywhere_all_at_once.jpeg",
@@ -54,6 +81,7 @@
             "slug": "birdman",
             "description": "A formally restless look at fame, ego, artistic validation, and the pressure to stay relevant.",
             "date": "2014-10-17",
+            "publishedDate": "2014-10-17",
             "author": "Ugur Kostak",
             "tags": ["drama", "theater"],
             "image": "./assets/images/movies/birdman.jpeg",
@@ -66,6 +94,7 @@
             "slug": "three-colors-trilogy",
             "description": "A philosophical trilogy that studies liberty, equality, and fraternity through color, coincidence, grief, and connection.",
             "date": "1994-07-01",
+            "publishedDate": "1994-07-01",
             "author": "Ugur Kostak",
             "tags": ["philosophical", "trilogy"],
             "image": "./assets/images/movies/three_colors_trilogy.jpg",

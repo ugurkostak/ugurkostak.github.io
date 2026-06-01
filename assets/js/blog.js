@@ -117,8 +117,9 @@
     });
 
     if (closestItem !== null && articlesData[closestItem]) {
-      const dateShort = formatDateShort(articlesData[closestItem].date);
-      const dateParts = formatDateParts(articlesData[closestItem].date);
+      const displayDate = articlesData[closestItem].publishedDate || articlesData[closestItem].date;
+      const dateShort = formatDateShort(displayDate);
+      const dateParts = formatDateParts(displayDate);
       
       if (dateElement) {
         dateElement.textContent = dateShort;
@@ -200,7 +201,7 @@
               <div class="project-text-holder">
                 <div class="project-text-inner">
                   <h3>${article.title}</h3>
-                  <div class="blog-feed-item-overlay-date-text">${formatDate(article.date)}</div>
+                  <div class="blog-feed-item-overlay-date-text">${formatDate(article.publishedDate || article.date)}</div>
                   <p>Discover more</p>
                 </div>
               </div>

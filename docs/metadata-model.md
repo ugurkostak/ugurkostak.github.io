@@ -34,11 +34,19 @@ photography/metadata.json
   "type": "cinema",
   "status": "published",
   "date": "2026-01-01",
+  "publishedDate": "2026-01-01",
   "updated": "2026-01-01",
   "summary": "Short description used on cards and previews.",
   "url": "cinema/three-colors-trilogy.html",
   "heroImage": "assets/images/movies/three_colors_trilogy.jpg",
   "thumbnail": "assets/images/movies/three_colors_trilogy.jpg",
+  "contentImages": [
+    {
+      "src": "assets/images/movies/three_colors_trilogy-detail.png",
+      "alt": "Additional image used inside the article",
+      "caption": "Optional caption for the in-article image"
+    }
+  ],
   "alt": "Image representing the article",
   "tags": ["cinema", "review"],
   "categories": ["film"],
@@ -54,12 +62,14 @@ photography/metadata.json
 - `title`: display title
 - `type`: section/content type
 - `status`: `draft`, `published`, or `archived`
-- `date`: publication date
+- `date`: primary chronology date for sorting. For cinema entries, keep using the established film/release date unless the section is migrated intentionally.
+- `publishedDate`: site publication, watched, or posting date when it differs from the chronology date
 - `updated`: last meaningful update date
 - `summary`: card/listing summary
 - `url`: relative path to HTML page
 - `heroImage`: larger image for detail pages
 - `thumbnail`: optimized image for cards
+- `contentImages`: additional images used inside the page content, separate from the cover/hero image. Use an array so entries can include multiple in-article images.
 - `alt`: image alt text
 - `tags`: reusable discovery labels
 - `categories`: broader grouping labels

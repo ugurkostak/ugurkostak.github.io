@@ -226,6 +226,22 @@ a:hover, a:focus {
   padding: var(--spacing-lg) 0;
 }
 
+/* Cinema article images: smaller, centered, with breathing room.
+   Applied via the `movie-image` class on cinema page <img> elements. */
+.movie-image {
+  display: block;
+  margin: var(--spacing-md) auto;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .movie-image {
+    max-width: 80%;
+  }
+}
+
 /* About page: align image and text side by side on desktop */
 @media (min-width: 992px) {
   .about-row {
