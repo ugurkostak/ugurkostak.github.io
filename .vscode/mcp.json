@@ -7,6 +7,10 @@
       "env": {
         "PLAYWRIGHT_BROWSERS_PATH": "0"
       }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
     }
   }
 }

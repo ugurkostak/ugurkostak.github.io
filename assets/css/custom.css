@@ -13,6 +13,9 @@
   --primary-color: #ff6360;
   --primary-dark: #ff312d;
   --primary-light: #ff8680;
+  /* Darker primary used for text on light backgrounds to meet
+     WCAG AA contrast (>= 4.5:1 against --nav-bg / --page-bg). */
+  --primary-text: #c93b39;
 
   /* Theme Colors */
   --page-bg: #fff;
@@ -71,6 +74,8 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
+  /* Use the brighter primary directly on dark backgrounds; contrast already passes. */
+  --primary-text: var(--primary-color);
   --page-bg: #101318;
   --surface: #171c24;
   --surface-muted: #1d2430;
@@ -110,6 +115,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
+    --primary-text: var(--primary-color);
     --page-bg: #101318;
     --surface: #171c24;
     --surface-muted: #1d2430;
@@ -298,12 +304,12 @@ a:hover, a:focus {
 }
 
 .nav > li > a.active {
-  color: var(--primary-color);
+  color: var(--primary-text);
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-  color: var(--primary-color);
+  color: var(--primary-text);
   background-color: transparent;
 }
 

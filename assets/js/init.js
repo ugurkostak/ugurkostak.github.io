@@ -4,8 +4,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize page-specific components
-  if (typeof masonryBuild === 'function') {
+  // Initialize page-specific components.
+  // Only call masonryBuild() when a masonry grid is actually present;
+  // the legacy template helper throws on null elements otherwise.
+  if (
+    typeof masonryBuild === 'function' &&
+    document.querySelector('.grid, .masonry, [data-masonry]')
+  ) {
     masonryBuild();
   }
 

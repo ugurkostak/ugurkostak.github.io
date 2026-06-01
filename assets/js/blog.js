@@ -75,6 +75,23 @@
   }
 
   /**
+   * Section-level fallback thumbnails used when an article has no image.
+   * Keeps cards visually consistent for sections that don't yet have
+   * per-entry artwork (e.g. algorithmic-art visualizations).
+   */
+  const sectionFallbackImage = {
+    'algorithmic-art': './assets/images/algorithmic-art/algorithmic-art-tile.png',
+    'tech-blog': './assets/images/tech/tech-blog-tile.png',
+    'cinema': '',
+    'photography': ''
+  };
+
+  function getArticleImage(article, page) {
+    if (article.image) return article.image;
+    return sectionFallbackImage[page] || '';
+  }
+
+  /**
    * Update scrollbar date and right timeline based on currently visible article
    */
   function updateScrollbarDate() {
@@ -173,10 +190,11 @@
         item.className = 'blog-feed-item';
 
         const articleSummary = getArticleSummary(article);
+        const articleImage = getArticleImage(article, page);
 
         item.innerHTML = `
           <div class="blog-feed-item-image blog-feed-item-image--${page}">
-            ${article.image ? `<img src="${article.image}" alt="${article.title}">` : ''}
+            ${articleImage ? `<img src="${articleImage}" alt="${article.title}">` : ''}
             <a href="./${page}/${article.slug}.html" class="blog-feed-item-overlay">
               <div class="project-text-holder">
                 <div class="project-text-inner">

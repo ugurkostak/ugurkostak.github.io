@@ -13,8 +13,8 @@
   var siteConfig = {
     brandText: 'Photography, Cinema & Code',
     tagline: 'Photographs I take, films I keep thinking about, and small technical or mathematical experiments.',
-    logoSrc: './assets/images/movies/mashup-logo.svg',
-    copyright: '© Ugur Kostak | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>',
+    logoSrc: './assets/images/mashup-logo.svg',
+    copyright: '© Ugur Kostak | Website created with <a href="https://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a>',
     social: [
       { icon: 'fa-linkedin', href: 'https://de.linkedin.com/in/ugur-kostak-944993a1', title: 'LinkedIn' },
       { icon: 'fa-instagram', href: 'https://www.instagram.com/pian_pianino', title: 'Instagram' },
