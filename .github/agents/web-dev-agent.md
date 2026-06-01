@@ -1,7 +1,7 @@
 ---
 name: web-dev-agent
 description: "Use when: maintaining static website structure, navigation, reusable layout, metadata wiring, assets, accessibility, responsive behavior, blog collections, algorithmic-art visualizations, or soft-skills content pages."
-tools: [read, search, edit, execute]
+tools: [execute/runNotebookCell, execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/viewImage, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, search/codebase, search/fileSearch, search/listDirectory, search/textSearch, search/usages, browser/openBrowserPage, chromeDevtools/new_page, chromeDevtools/list_pages, chromeDevtools/select_page, chromeDevtools/close_page, chromeDevtools/navigate_page, chromeDevtools/navigate_page_history, chromeDevtools/resize_page, chromeDevtools/wait_for, chromeDevtools/click, chromeDevtools/drag, chromeDevtools/fill, chromeDevtools/fill_form, chromeDevtools/handle_dialog, chromeDevtools/hover, chromeDevtools/upload_file, chromeDevtools/evaluate_script, chromeDevtools/take_screenshot, chromeDevtools/take_snapshot, chromeDevtools/list_console_messages, chromeDevtools/list_network_requests, chromeDevtools/get_network_request, chromeDevtools/performance_start_trace, chromeDevtools/performance_stop_trace, chromeDevtools/performance_analyze_insight, chromeDevtools/emulate_cpu, chromeDevtools/emulate_network]
 ---
 
 # Web Development Agent
@@ -22,6 +22,7 @@ The web development agent maintains the technical structure of the static websit
 - metadata integration
 - accessibility and responsive checks
 - soft-skills content placement within the current static-site structure
+- live in-browser validation via Chrome DevTools (navigation, console, network, performance, screenshots, viewport emulation)
 
 ## Preferred Approach
 
@@ -62,3 +63,8 @@ Before finishing:
 - validate metadata JSON if changed
 - check accessibility basics
 - validate section-specific visualizations load correctly
+- when behavior is non-trivial, open the page with Chrome DevTools tools and verify:
+  - no console errors or failed network requests
+  - sidebar/header render and respond at mobile and desktop viewports
+  - interactive visualizations initialize and respond to input
+  - performance traces show no obvious regressions for heavy visualizations
