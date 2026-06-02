@@ -97,7 +97,21 @@
             "publishedDate": "1994-07-01",
             "author": "Ugur Kostak",
             "tags": ["philosophical", "trilogy"],
-            "image": "./assets/images/movies/three_colors_trilogy.jpg",
+            "image": "./assets/images/cinema/three-colors-trilogy/cover.png",
+            "contentImages": [
+                {
+                    "src": "./assets/images/cinema/three-colors-trilogy/blue.jpg",
+                    "alt": "Blue from Three Colors Trilogy"
+                },
+                {
+                    "src": "./assets/images/cinema/three-colors-trilogy/white.png",
+                    "alt": "White from Three Colors Trilogy"
+                },
+                {
+                    "src": "./assets/images/cinema/three-colors-trilogy/red.jpg",
+                    "alt": "Red from Three Colors Trilogy"
+                }
+            ],
             "content": "Three Colors Trilogy is described as three connected films that each stand alone while contributing to a larger meditation on human connection. The metadata highlights Kieslowski's use of color, fate, and moral choice without reducing the trilogy to a simple theme summary.",
             "featured": false
         }
