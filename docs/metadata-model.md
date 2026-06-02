@@ -38,11 +38,11 @@ photography/metadata.json
   "updated": "2026-01-01",
   "summary": "Short description used on cards and previews.",
   "url": "cinema/three-colors-trilogy.html",
-  "heroImage": "assets/images/movies/three_colors_trilogy.jpg",
-  "thumbnail": "assets/images/movies/three_colors_trilogy.jpg",
+  "heroImage": "assets/images/cinema/three-colors-trilogy/cover.png",
+  "thumbnail": "assets/images/cinema/three-colors-trilogy/cover.png",
   "contentImages": [
     {
-      "src": "assets/images/movies/three_colors_trilogy-detail.png",
+      "src": "assets/images/cinema/three-colors-trilogy/blue.jpg",
       "alt": "Additional image used inside the article",
       "caption": "Optional caption for the in-article image"
     }

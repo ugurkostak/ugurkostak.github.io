@@ -74,7 +74,7 @@ Instructions are rules and guidelines that apply automatically to certain file t
 **Image Organization:**
 ```text
 assets/images/
-├── movies/          # Cinema section
+├── cinema/          # Cinema section
 ├── math/            # Algorithmic art visualizations
 ├── photos/
 │   ├── big/         # Original high-resolution

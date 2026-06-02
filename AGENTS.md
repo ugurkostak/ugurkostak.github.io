@@ -62,7 +62,7 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 │   │   └── blog.js
 │   ├── fonts/
 │   └── images/
-│       ├── movies/
+│       ├── cinema/
 │       ├── photos/
 │       │   ├── big/
 │       │   └── small/

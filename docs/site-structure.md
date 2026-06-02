@@ -27,7 +27,7 @@
 │   │   └── [other utilities]
 │   ├── fonts/
 │   └── images/
-│       ├── movies/
+│       ├── cinema/
 │       ├── photos/
 │       │   ├── big/
 │       │   └── small/
@@ -134,7 +134,7 @@ assets/
 │   └── [utilities]
 ├── fonts/                            # Web fonts
 ├── images/                           # Images organized by section
-│   ├── movies/
+│   ├── cinema/
 │   ├── math/
 │   ├── photos/
 │   │   ├── big/                      # Original high-resolution

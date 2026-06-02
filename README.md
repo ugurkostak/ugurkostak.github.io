@@ -49,7 +49,7 @@ ugurkostak.github.io/
 │   ├── fonts/
 │   ├── images/
 │   │   ├── consulting/
-│   │   ├── movies/
+│   │   ├── cinema/
 │   │   ├── photos/
 │   │   ├── math/
 │   │   └── tech/
@@ -221,7 +221,7 @@ assets/
 ├── fonts/
 ├── images/
 │   ├── consulting/
-│   ├── movies/
+│   ├── cinema/
 │   ├── photos/
 │   ├── math/
 │   └── tech/
@@ -318,8 +318,8 @@ Recommended item shape:
   "updated": "2026-01-01",
   "summary": "Short description used on cards and previews.",
   "url": "cinema/three-colors-trilogy.html",
-  "heroImage": "assets/images/movies/three-colors-trilogy.jpg",
-  "thumbnail": "assets/images/movies/three-colors-trilogy.jpg",
+  "heroImage": "assets/images/cinema/three-colors-trilogy/cover.png",
+  "thumbnail": "assets/images/cinema/three-colors-trilogy/cover.png",
   "alt": "Image representing the article",
   "tags": ["cinema", "review"],
   "categories": ["film"],

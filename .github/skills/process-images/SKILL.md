@@ -11,7 +11,7 @@ Use this skill when adding, resizing, or preparing images for web presentation i
 
 ## Steps
 
-1. Put originals in `assets/images/photos/big/` or the relevant active section image folder (`movies`, `photos`, `tech`, or `math`).
+1. Put originals in `assets/images/photos/big/` or the relevant active section image folder (`cinema`, `photos`, `tech`, or `math`).
 2. Run `scripts/shape_images.py` to generate web-sized versions.
 3. Store generated photos in `assets/images/photos/small/` or the appropriate output folder.
 4. Use optimized images in gallery grids and cards.

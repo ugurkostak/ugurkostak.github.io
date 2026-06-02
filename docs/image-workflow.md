@@ -14,10 +14,22 @@ assets/images/
 ├── photos/
 │   ├── big/         # original/high-resolution photos
 │   └── small/       # generated web-sized photos
-├── movies/          # cinema images
+├── cinema/          # cinema images, nested per article
+│   └── <slug>/      # one folder per cinema article
+│       ├── cover.<ext>   # listing/hero image (required)
+│       └── *.<ext>       # additional in-article stills
 ├── tech/            # technology images
 └── math/            # algorithmic art and visualization images
 ```
+
+## Cinema Image Convention
+
+Each cinema article owns a folder named after its `slug`:
+
+- `assets/images/cinema/<slug>/cover.<ext>` — the listing card image and article hero. Referenced by `image` in `cinema/metadata.json`.
+- Additional stills go in the same folder with descriptive filenames (e.g. `poster.png`, `still-1.jpg`, or per-segment names like `blue.jpg`, `white.png`, `red.jpg` for the trilogy). Referenced by `contentImages[].src` in metadata.
+
+Keep filenames URL-safe (lowercase, hyphens, no spaces). When adding a new cinema entry, create the folder first, drop the cover and any stills inside, then reference them from metadata and the article HTML using the nested paths.
 
 ## Downscaling
 

@@ -13,7 +13,7 @@ applyTo: "assets/**/*"
 
 ## Image Rules
 
-- Movie images: `assets/images/movies/`
+- Movie images: `assets/images/cinema/`
 - Tech images: `assets/images/tech/`
 - Math/algorithmic-art images: `assets/images/algorithmic-art/`
 - Photo originals: `assets/images/photos/big/`

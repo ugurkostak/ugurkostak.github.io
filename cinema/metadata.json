@@ -9,14 +9,14 @@
             "publishedDate": "2026-06-01",
             "author": "Ugur Kostak",
             "tags": ["comedy", "drama", "family"],
-            "image": "./assets/images/movies/the-royal-tenenbaums-2.jpg",
+            "image": "./assets/images/cinema/the-royal-tenenbaums/cover.jpg",
             "contentImages": [
                 {
-                    "src": "./assets/images/movies/the-royal-tenenbaums-2.jpg",
+                    "src": "./assets/images/cinema/the-royal-tenenbaums/cover.jpg",
                     "alt": "The Royal Tenenbaums (still)"
                 },
                 {
-                    "src": "./assets/images/movies/the-royal-tenenbaums.png",
+                    "src": "./assets/images/cinema/the-royal-tenenbaums/poster.png",
                     "alt": "The Royal Tenenbaums"
                 }
             ],
@@ -32,7 +32,7 @@
             "publishedDate": "2022-10-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "music"],
-            "image": "./assets/images/movies/tar.jpeg",
+            "image": "./assets/images/cinema/tar/cover.jpeg",
             "content": "This note focuses on TÁR as a tense study of authority and self-protection. It looks at Cate Blanchett's performance, Todd Field's precise direction, and the way the film turns concert halls and institutional polish into a setting for ethical collapse.",
             "featured": true
         },
@@ -45,7 +45,7 @@
             "publishedDate": "2022-10-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "island"],
-            "image": "./assets/images/movies/The_Banshees_of_Inisherin.jpg",
+            "image": "./assets/images/cinema/banshees-of-inisherin/cover.jpg",
             "content": "The Banshees of Inisherin starts with a friendship ending and lets the wound widen slowly. The metadata now reflects the page's focus on dialogue, isolation, the bleak Irish landscape, and the way comedy and cruelty sit uncomfortably close together.",
             "featured": true
         },
@@ -58,7 +58,7 @@
             "publishedDate": "2022-04-01",
             "author": "Ugur Kostak",
             "tags": ["drama", "family"],
-            "image": "./assets/images/movies/aftersun.jpg",
+            "image": "./assets/images/cinema/aftersun/cover.jpg",
             "content": "Aftersun is presented as an intimate film about memory rather than a simple holiday story. The expanded copy points to the page's emphasis on Paul Mescal's restrained performance, warm visual texture, and the emotional gap between what a child sees and what an adult later understands.",
             "featured": false
         },
@@ -71,7 +71,7 @@
             "publishedDate": "2022-03-01",
             "author": "Ugur Kostak",
             "tags": ["sci-fi", "multiverse"],
-            "image": "./assets/images/movies/everything_everywhere_all_at_once.jpeg",
+            "image": "./assets/images/cinema/everything-everywhere-all-at-once/cover.jpeg",
             "content": "Everything Everywhere All at Once is summarized as both spectacle and emotional family drama. The longer listing text connects its visual play, multiverse structure, and rapid humor with the more grounded questions of belonging, love, and how people stay connected across difference.",
             "featured": true
         },
@@ -84,7 +84,7 @@
             "publishedDate": "2014-10-17",
             "author": "Ugur Kostak",
             "tags": ["drama", "theater"],
-            "image": "./assets/images/movies/birdman.jpeg",
+            "image": "./assets/images/cinema/birdman/cover.jpeg",
             "content": "Birdman is framed around performance, recognition, and the anxiety of being trapped by an old success. The expanded metadata reflects the page's attention to the apparent single-take style, Michael Keaton's vulnerable lead performance, and the film's sharp divide between art, entertainment, and approval.",
             "featured": false
         },
