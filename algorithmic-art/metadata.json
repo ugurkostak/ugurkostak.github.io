@@ -1,5 +1,18 @@
 [
   {
+    "id": "7",
+    "title": "Spirography",
+    "slug": "spirography",
+    "description": "Interactive visualization of spirography patterns created by rolling circles, exploring hypotrochoid and epitrochoid curves.",
+    "date": "2026-06-02",
+    "author": "Ugur Kostak",
+    "category": "mathematics",
+    "tags": ["math", "geometry", "spirography", "parametric-curves", "interactive", "patterns"],
+    "image": "",
+    "content": "An interactive exploration of spirography patterns, where rolling circles create mathematical art. Adjust outer radius, inner radius, and pen distance to generate infinite variations of beautiful parametric curves.",
+    "featured": false
+  },
+  {
     "id": "6",
     "title": "Manhattan Distance Visualization",
     "slug": "manhattan-distance",
