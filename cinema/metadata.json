@@ -89,6 +89,19 @@
             "featured": false
         },
         {
+            "id": "8",
+            "title": "Fargo",
+            "slug": "fargo",
+            "description": "A snowbound crime story where greed, absurdity, and violence are measured against the stubborn decency of Marge Gunderson.",
+            "date": "1996-03-08",
+            "publishedDate": "1996-03-08",
+            "author": "Ugur Kostak",
+            "tags": ["crime", "drama", "dark-comedy"],
+            "image": "./assets/images/cinema/fargo/cover.jpg",
+            "content": "Fargo is framed as more than a clever crime film. The review focuses on the Coen Brothers' balance of deadpan humor and violence, Frances McDormand's quietly moral performance as Marge Gunderson, and the snowbound landscape that turns ordinary greed into something stark and unforgettable.",
+            "featured": false
+        },
+        {
             "id": "6",
             "title": "Three Colors Trilogy",
             "slug": "three-colors-trilogy",
