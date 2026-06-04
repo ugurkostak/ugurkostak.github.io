@@ -1,6 +1,30 @@
 {
     "articles": [
         {
+            "id": "6",
+            "title": "Lesbos",
+            "slug": "lesbos",
+            "description": "A photography series from Lesbos capturing island light, coastal villages, and the quiet rhythm of daily life on the Aegean.",
+            "date": "2026-06-04",
+            "author": "Ugur Kostak",
+            "tags": ["travel", "island"],
+            "image": "",
+            "content": "Photography and narrative details to be added.",
+            "featured": false
+        },
+        {
+            "id": "5",
+            "title": "Prague",
+            "slug": "prague",
+            "description": "A photography series from Prague, capturing architecture, street life, and the city's light across different seasons.",
+            "date": "2026-06-03",
+            "author": "Ugur Kostak",
+            "tags": ["travel", "urban"],
+            "image": "",
+            "content": "Photography and narrative details to be added.",
+            "featured": false
+        },
+        {
             "id": "1",
             "title": "Stuttgart",
             "slug": "stuttgart",
