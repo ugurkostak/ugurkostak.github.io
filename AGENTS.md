@@ -106,7 +106,8 @@ The site should remain lightweight, maintainable, accessible, and easy to update
     │   └── python-scripts.instructions.md
     ├── agents/
     │   ├── web-dev-agent.md
-    │   └── content-editor-agent.md
+    │   ├── content-editor-agent.md
+    │   └── instagram-creator-blog-publisher.agent.md
     └── skills/
         ├── add-new-page/
         │   └── SKILL.md
@@ -137,6 +138,12 @@ The site should remain lightweight, maintainable, accessible, and easy to update
 - Keep paths relative and compatible with GitHub Pages.
 - Do not remove existing content unless requested.
 - Treat soft-skills writing as reflective, practical content about communication, collaboration, feedback, mentoring, learning, teamwork, leadership, and career growth.
+
+## Active Agents
+
+- **Web Developer Agent** (`.github/agents/web-dev-agent.md`) – Maintains static website structure, navigation, reusable layout, metadata wiring, assets, accessibility, responsive behavior, blog collections, algorithmic-art visualizations, and soft-skills content pages.
+- **Content Editor Agent** (`.github/agents/content-editor-agent.md`) – Edits website copy, metadata, titles, summaries, article structure, soft-skills writing, cinema reviews, photography stories, tech-blog articles, and algorithmic-art text.
+- **Instagram Creator Blog Publisher** (`.github/agents/instagram-creator-blog-publisher.agent.md`) – Fetches the latest blog post and publishes it to an Instagram Creator account through the official Graph API.
 
 ### HTML
 
@@ -201,3 +208,4 @@ Before finishing a change, check:
 - Image workflow: `docs/image-workflow.md`
 - Web developer agent: `.github/agents/web-dev-agent.md`
 - Content editor agent: `.github/agents/content-editor-agent.md`
+- Instagram Creator agent: `.github/agents/instagram-creator-blog-publisher.agent.md`
